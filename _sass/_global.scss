@@ -1,4 +1,8 @@
-// S0me global things
+// Some global things
+
+* + * {
+  margin-top: 1.5em;
+}
 
 html {
   background-color: white;
@@ -24,12 +28,6 @@ body {
   max-height: 100%;
 }
 
-.fonts-stage-1 {
-  body {
-    font-family: $base-font-family;
-  }
-}
-
 a {
   color: $link-color;
 
@@ -47,214 +45,38 @@ img {
   max-width: 100%;
 }
 
-// Layout items for grid amendments
+// Coming soon (to be removed)
 
-.component-wrapper {
-  background-color: white;
-  padding: 2rem 1rem 3rem;
-  position: relative;
-}
-
-.full-height {
-  height: calc(100vh - 98px);
-}
-
-.news-block-wrapper,
-.newsletter-block-wrapper, {
-  background-color: white;
-}
-
-.slider-component-wrapper {
-  background-color: $slider-green;
-  padding: 0;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 0;
-
-  @include breakpoint(48em) {
-    min-height: 466px;
-  }
-
-}
-
-.slider-component-wrapper-two {
-  background-color: $heritage-green;
-  min-height: 466px;
-  padding-bottom: 0;
-}
-
-.insights-block-wrapper,
-.education-block-wrapper,
-.footer-block-wrapper,
-.about-component,
-.with-bg {
-  background-color: $bg-grey;
-}
-
-.about-component {
-  padding: 3rem 1rem;
-}
-
-.video-block-wrapper {
-  background-color: $slider-green;
-}
-
-.container {
-  @extend %clearfix;
-  margin: 0 auto;
+.coming-soon-grid {
+  border-top: 1px solid transparent;
   max-width: 1200px;
-}
+  margin: auto;
+  padding: 0 1rem;
 
-// Login etc
-
-.background-wrapper {
-  background-color: rgba(0, 22, 14, 0.9);
-  visibility: hidden;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transition: all 0.3s;
-  width: 100%;
-  z-index: 3;
-
-  &.show {
-
-    visibility: visible;
-  }
-
-}
-
-.location-modal {
-  backface-visibility: hidden;
-  background: #fff;
-  border-radius: 2px;
-  min-height: 200px;
-  left: 0;
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-  top: 20vh;
-  visibility: hidden;
-  width: 50%;
-  max-width: 650px;
-  min-width: 320px;
-  transition: all 0.25s ease-in-out;
-  z-index: 100;
-  transform: scale(0.8);
-
-  &.show {
-    visibility: visible;
-    transform: scale(1);
-  }
-
-  header {
-    @include rem(padding, 10px 20px);
-    background-color: $bg-grey;
-  }
-
-  h3 {
-    display: inline-block;
-    font-weight: 400;
-  }
-
-}
-
-.close-modal {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-// Modal content
-
-.choose-location {
-  @include rem(padding, 0 20px 40px 0);
-  @include rem(min-height, 400px);
-
-  @include breakpoint(41.563em) {
+  @include breakpoint(769px) {
+    align-items: center;
+    justify-content: center;
     display: flex;
-    align-content: space-around;
-  }
-}
-
-.flag-chooser {
-  @include rem(margin, 32px 40px 0 0);
-  display: block;
-  text-decoration: none;
-
-  img {
-    @include rem(margin, 0 5px 0 0);
-    height: 32px;
-    vertical-align: middle;
-    width: 60px;
+    height: 100vh;
   }
 
-}
+  > div {
+    flex: 1 0 0;
+    margin: auto;
 
-// Eva
+    &:last-of-type {
+      display: none;
 
-.eva-icon {
-  bottom: 0px;
-  cursor: pointer;
-  float: none;
-  height: 50px;
-  margin: 24px;
-  position: fixed;
-  right: 0px;
-  width: 50px;
-  z-index: 1;
+      @include breakpoint(769px) {
+        display: flex;
+        flex: 1 0 20%;
+      }
+    }
 
-  &:hover {
-    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
-  }
-
-}
-
-.eva-dummy {
-  box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
-  bottom: 110px;
-  cursor: pointer;
-  float: none;
-  position: fixed;
-  right: 20px;
-  z-index: 1;
-}
-
-// cookies
-
-.cookie-policy {
-  @include rem(padding, 16px 0);
-  background-color: $nedbank-green;
-  color: white;
-  bottom: 1em;
-  left: 1em;
-  position: fixed;
-  max-width: 24em;
-  padding: 2rem;
-  z-index: 999;
-
-  .container {
-    align-items: flex-start;
-    display: flex;
-    justify-content: space-between;
-
-    @include breakpoint(64em) {
-      padding: 0;
+    img {
+      object-fix: cover;
     }
 
   }
-
-  a {
-    color: white;
-  }
-
-}
-
-.cookie-text {
-  margin: 0;
-  padding-right: 2rem;
 
 }

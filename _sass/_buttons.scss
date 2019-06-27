@@ -4,21 +4,24 @@ button,
 input[type="submit"],
 input[type="button"] {
   &:focus {
-    outline: 1px dotted $dark-grey;
+    outline: 1px dotted $light-grey;
   }
 }
 
 .button {
-  @include rem(padding, 12px 20px);
-  @include font-size(18);
-  background-color: $grass-green;
+  @include rem(padding, 0 40px);
+  @include font-size(16);
+  @include rem(min-height, 50px);
+  @include rem(min-width, 200px);
+  align-items: center;
+  background-color: $button-color;
   border: 0;
-  border-radius: 0.23rem;
-  color: $white;
-  display: inline-block;
+  border-radius: 25px;
+  color: white;
+  display: flex;
   font-family: inherit;
   font-weight: 400;
-  text-align: center;
+  justify-content: center;
   text-decoration: none;
   transition: all 250ms ease-in;
   width: auto;
@@ -27,20 +30,25 @@ input[type="button"] {
     @include rem(margin, 0 0 0 15px);
   }
 
+  &.button-large-cta {
+    @include rem(min-height, 60px);
+    @include font-size(18);
+  }
+
   &.button-outline {
     @include rem(padding, 10px 18px);
     background: white;
-    border: 2px solid $button-hover;
-    color: $grass-green;
+    border: 2px solid $button-hover-color;
+    color: $button-color;
 
     &:hover {
-      border-color: $button-hover;
+      border-color: $button-hover-color;
     }
 
   }
 
   &:hover, &:focus {
-    background: $button-hover;
+    background: $button-hover-color;
     color: white;
     text-decoration: none;
   }
@@ -83,8 +91,8 @@ input[type="button"] {
   }
 
   &.neutral-button {
-    background-color: $medium-grey;
-    color: $dark-grey;
+    background-color: $light-grey;
+    color: $light-grey;
   }
 
   &:focus {
@@ -100,19 +108,6 @@ input[type="button"] {
   &.slider-button {
     background-color: #006341;
     border: 0;
-  }
-
-  &.inverse-button {
-    background-color: white;
-    color: $nedbank-green;
-  }
-
-  &.dark-button {
-    background-color: $heritage-green;
-  }
-
-  &.add-button {
-    @include rem(padding, 10px);
   }
 
   &.loading-button {
@@ -135,7 +130,7 @@ input[type="button"] {
   }
 
   &.reset {
-    background-color: $lightest-grey;
+    background-color: $very-light-grey;
     color: $base-color;
   }
 
@@ -172,201 +167,6 @@ input[type="button"] {
   &:hover, &:focus {
     background: transparent;
     color: $link-hover-color;
-  }
-
-}
-
-// Special buttons
-
-.product-button {
-  @include rem(height, 40px);
-  @include rem(padding, 10px 5px 10px 20px);
-  @include font-size(11);
-  background-color: $teal-green;
-  border-radius: 20px;
-  color: white;
-  display: inline-block;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: box-shadow 250ms ease-in-out;
-
-  @include breakpoint(26.25em) {
-    @include font-size(12);
-    @include rem(padding, 10px 8px 10px 30px);
-  }
-
-  &:hover {
-    box-shadow: 0 0 0 1px $teal-green;
-    color: white;
-  }
-
-  svg {
-    @include rem(margin, 0 0 0 10px);
-    transform: translateY(-2px);
-    vertical-align: middle;
-  }
-
-  &.ra-prompt {
-    background-color: $product-teal;
-
-    &:hover {
-      box-shadow: 0 0 0 1px $product-teal;
-    }
-
-  }
-
-  &.ut-prompt {
-    background-color: $grass-green;
-
-    &:hover {
-      box-shadow: 0 0 0 1px $grass-green;
-    }
-
-  }
-
-  &.tfi-prompt {
-    background-color: $apple-green;
-
-    &:hover {
-      box-shadow: 0 0 0 1px $apple-green;
-    }
-
-  }
-
-}
-
-.ghost-product-button {
-  @include rem(height, 40px);
-  @include rem(padding, 10px 30px);
-  @include font-size(12);
-  background-color: transparent;
-  border: 0;
-  box-shadow: 0 0 0 1px $teal-green;
-  border-radius: 20px;
-  color: $nedbank-green;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: box-shadow 250ms ease-in-out;
-
-  + .ghost-product-button {
-    @include rem(margin, 0 0 0 10px);
-  }
-
-  &:hover {
-    box-shadow: 0 0 0 2px $teal-green;
-  }
-
-}
-
-
-// Button group
-
-.button-option {
-  @include rem(margin, 16px 0 32px);
-
-  button + button {
-    @include rem(margin, 0 0 0 32px);
-  }
-
-}
-
-.button-group {
-  display: flex;
-  align-items: center;
-
-  &.centered-group {
-    justify-content: center;
-  }
-
-}
-
-.grouped-button {
-  @include font-size(14);
-  @include rem(padding, 10px);
-  background-color: white;
-  border: 1px solid $grass-green;
-  border-right-width: 0;
-  font-family: inherit;
-
-  &:first-of-type {
-    border-radius: 3px 0 0 3px;
-  }
-
-  &:last-of-type {
-    border-radius: 0 3px 3px 0;
-    border-right-width: 1px;
-  }
-
-  &.active, &:hover {
-    background-color: $grass-green;
-    color: white;
-  }
-}
-
-.td-dropdown-button {
-  background-color: $apple-green;
-  border: 0;
-  color: white;
-
-  + .td-dropdown-button {
-    @include rem(margin, 0 0 0 5px);
-  }
-
-}
-
-
-.sort-tool {
-  @include rem(height, 40px);
-  @include rem(padding, 0 30px);
-  @include font-size(12);
-  align-items: center;
-  background: $teal-green;
-  border: 0;
-  border-radius: 25px;
-  border: 1px solid $teal-green;
-  color: white;
-  display: flex;
-  font-weight: 600;
-  justify-content: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 250ms ease-in;
-
-  + .sort-tool {
-    @include rem(margin, 0 0 0 16px);
-  }
-
-  svg {
-    height: 30px;
-    margin: 0 0.5rem 0 0;
-    vertical-align: middle;
-    width: 20px;
-  }
-
-  &.inactive {
-    background: transparent;
-    color: $teal-green;
-
-    &:hover {
-      box-shadow: 0 0 0 1px $teal-green;
-    }
-
-  }
-
-  &:disabled {
-    background-color: #e6e6e6;
-    border: 1px solid #e6e6e6;
-    color: #cccccc;
-    cursor: not-allowed;
-
-    svg {
-      path {
-        fill: #cccccc;
-      }
-    }
-
   }
 
 }

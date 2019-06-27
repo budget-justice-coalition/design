@@ -1,10 +1,10 @@
 ::-moz-selection {
-	background: $grass-green;
+	background: $elf-green;
 	color: white;
 }
 
 ::selection {
-	background: $grass-green;
+	background: $elf-green;
 	color: white;
 }
 
@@ -12,15 +12,19 @@ h1,
 h2,
 h3 {
 	color: $heading-color;
-	font-weight: $heading-font-weight;
 }
 
 h1 {
-	// font-size: 5rem;
+	@include font-size(40);
+}
+
+.coming-soon-header {
+	color: $elf-green;
+	margin-top: 0;
 }
 
 h2 {
-	// font-size: 3.6rem;
+	@include font-size(28);
 	line-height: 1.4;
 }
 
@@ -94,7 +98,7 @@ dl dt {
 	clear: left;
 	text-align: right;
 	text-overflow: ellipsis;
-	$white-space: nowrap;
+	white-space: nowrap;
 	font-weight: 700;
 	margin-bottom: 1em;
 }
@@ -156,5 +160,5 @@ kbd {
 blockquote {
 	@include rem(padding, 10px 24px);
 	@include rem(margin, 24px 0);
-	border-left: 0.5rem solid $grass-green;
+	border-left: 0.5rem solid $elf-green;
 }

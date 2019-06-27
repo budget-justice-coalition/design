@@ -1,8 +1,5 @@
 ## grunt stuff
 
-node_modules
-.npm-debug.log
-tmp
-
-.sass-cache
-*.mp4
+_site/
+.sass-cache/
+.jekyll-metadata

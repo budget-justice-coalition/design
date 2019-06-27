@@ -1,0 +1,468 @@
+.main-header {
+  background-color: #2F2A33;
+  position: relative;
+  top: 0;
+  width: 100%;
+  // z-index: 10;
+}
+
+// Top header bar
+
+.action-strip {
+  @include rem(padding, 0 20px);
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.strip-alt {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chooser {
+  @include rem(padding, 10px 20px);
+  background-color: $lightest-grey;
+  text-align: center;
+
+  a {
+    font-weight: 600;
+  }
+
+}
+
+.location-close {
+  @include rem(margin, 0 10px 0 0);
+  vertical-align: middle;
+}
+
+.selected-location {
+  color: $grass-green;
+}
+
+
+// Segmentation choice
+
+// Inline nav
+
+.initial-segment {
+  @include rem(padding, 10px 0);
+  display: none;
+  margin: 0;
+  text-align: right;
+
+  @include breakpoint(48.75em) {
+    display: block;
+  }
+
+  li {
+    @include rem(margin, 0 20px 0 0);
+    display: inline-block;
+  }
+
+  a {
+    @include font-size(13);
+    color: $teal-green;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &.selected {
+      color: white;
+
+      &::after {
+        background-color: white;
+        content: "";
+        display: block;
+        height: 1px;
+        transform: translateY(3px);
+        width: 100%;
+      }
+
+    }
+
+    &:hover {
+      color: white;
+    }
+
+  }
+
+}
+
+// Dropdown nav
+
+.segment-chooser {
+  @include rem(margin, 0 10px 0 0);
+  display: block;
+  float: left;
+  position: relative;
+  text-transform: uppercase;
+
+  @include breakpoint(48.75em) {
+    display: none;
+  }
+
+}
+
+.segment-chooser-button {
+  @include rem(padding, 12px 30px 12px 20px);
+  background-color: transparent;
+  border: 0;
+  color: white;
+  position: relative;
+
+  &::after {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid white;
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 45%;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.segment-active {
+    background-color: white;
+    color: $grass-green;
+  }
+
+}
+
+.segmentation-nav {
+  @include rem(padding, 10px 20px);
+  background-color: white;
+  border: 1px solid $medium-grey;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+  border-top: 0;
+  display: none;
+  margin: 0;
+  position: absolute;
+  z-index: 15;
+  width: 260px;
+
+  li {
+    @include rem(margin, 0 5px 15px 0);
+    font-weight: 300;
+    list-style-type: none;
+  }
+
+  a {
+    @include font-size(14);
+    color: $teal-green;
+    text-decoration: none;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+
+}
+
+// Location selector
+
+.location-selector {
+  @include rem(padding, 14px 10px 0);
+  @include font-size(12);
+  color: $base-color;
+  display: none;
+  float: left;
+  text-transform: uppercase;
+
+  @include breakpoint(480px) {
+    display: block;
+  }
+
+}
+
+.change-location {
+  text-transform: uppercase;
+
+  .location-flag {
+    @include rem(margin, 0 0 0 5px);
+    height: 21px;
+    transform: translateY(-2px);
+    vertical-align: middle;
+    width: 30px;
+  }
+
+}
+
+.current-location {
+  font-weight: 600;
+}
+
+// Header login
+
+.header-login {
+  float: left;
+  position: relative;
+}
+
+.investor-select {
+  @include rem(padding, 14px 20px 14px 5px);
+  color: $teal-green;
+
+  svg {
+    transform: translateY(-2px) rotate(90deg);
+    vertical-align: middle;
+  }
+
+  &.segment-active {
+    svg {
+      transform: translateY(-2px) rotate(270deg);
+    }
+  }
+
+}
+
+.login-dropdown, .select-investor-dropdown {
+  @include rem(padding, 0 0 20px);
+  @include rem(width, 375px);
+  @include font-size(15);
+  background-color: white;
+  border: 1px solid $border-color;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 10003;
+
+  &.logged-in-dropdown {
+    @include rem(min-width, 250px);
+    width: 100%;
+  }
+
+}
+
+.select-investor-dropdown {
+  max-width: 350px;
+  left: 0;
+  right: auto;
+
+  @include breakpoint(780px) {
+    left: auto;
+    right: 0;
+
+
+    .select-investor {
+      text-align: right;
+    }
+
+
+  }
+
+}
+
+.logged-in-actions {
+  @include rem(padding, 20px 20px 0);
+  list-style-type: none;
+  margin: 0;
+  text-align: left;
+
+  li {
+    @include rem(margin, 10px 0 10px);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+.vector-lock {
+  height: 15px;
+  // vertical-align: middle;
+  width: 15px;
+}
+
+.forgot {
+  @include font-size(14);
+  @include rem(margin, 0 0 20px);
+  @include rem(padding, 10px 0 20px);
+  border-bottom: 1px solid $border-color;
+}
+
+// Tempe redirect
+
+.login-dropdown {
+  padding: 0;
+}
+
+.temp-redirect {
+  @include rem(padding, 20px 30px);
+  background-color: $bg-grey;
+  border-top: 1px solid $border-color;
+  display: flex;
+  align-items: flex-start;
+
+  span {
+    line-height: 1.4;
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+
+}
+
+.register-portfolio-link {
+  display: block;
+  @include font-size(14);
+}
+
+// Main nav holder
+
+.nav-outer {
+  @include rem(padding, 0 20px);
+  background-color: $nedbank-green;
+}
+
+.navigation-strip {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  &.centered {
+    @include rem(padding, 10px 0);
+    justify-content: center;
+  }
+
+}
+
+// Logo
+
+.internal-logo {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+
+  svg {
+    height: 70px;
+    width: 70px;
+  }
+
+  &::after {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+}
+
+// User actions - login, register, search
+
+// login
+
+.login-link {
+  @include rem(padding, 12px 9px 12px 20px);
+  background-color: $teal-green;
+  border: 0;
+  border-radius: 0;
+  position: relative;
+
+  span {
+    transition: opacity 250ms ease-in;
+  }
+
+  &.login-secure {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0.75em;
+    left: -8px;
+    width: 100%;
+    // text-align: center;
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+  }
+
+  &::before {
+    content: attr(data-hover);
+  }
+
+  &:hover span,
+  &:active span {
+    opacity: 0;
+  }
+
+  &:hover:before,
+  &:active:after {
+    opacity: 1;
+  }
+
+  &.login-active {
+    background-color: $grass-green;
+    color: $white;
+
+    svg {
+      transform: translateY(-2px) rotate(270deg);
+    }
+
+  }
+
+  &:hover {
+    border: 0;
+  }
+
+  svg {
+    @include rem(margin, 0 0 0 10px);
+    transform: rotate(90deg);
+  }
+
+}
+
+.profile-image {
+  @include font-size(12);
+  @include rem(padding, 5px 0 0);
+  @include rem(margin, 0 12px 0 0);
+  border: 1px solid $lime-green;
+  border-radius: 100%;
+  display: inline-block;
+  font-style: normal;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+}
+
+// Search
+
+.user-actions {
+  @include rem(padding, 30px 0);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.header-search-icon {
+  @include rem(padding, 5px 0 5px 10px);
+  display: inline-block;
+
+  @include breakpoint(64em) {
+    border-left: 1px solid $teal-green;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+}

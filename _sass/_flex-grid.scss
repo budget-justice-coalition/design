@@ -1,0 +1,206 @@
+// Flex grid items
+
+.flex-grid {
+  margin: 0 -1em;
+
+  @include breakpoint(50em) {
+    display: flex;
+    flex-wrap: wrap;
+
+    &.nowrap {
+      flex-wrap: nowrap;
+    }
+
+    > article, > div {
+      align-content: center;
+      max-width: 100%;
+      justify-content: flex-start;
+      display: flex;
+      flex-direction: column;
+
+      &.align-top {
+        align-content: start;
+        justify-content: start;
+      }
+
+      &.bottom-align {
+        align-content: left;
+        justify-content: space-between;
+      }
+
+      &.half-width {
+        flex: 1 0 calc(50% - 2em);
+        flex-basis: calc(50% - 2em);
+      }
+
+      &.third-width {
+        flex-basis: calc(33.33333% - 2em);
+      }
+
+      &.quarter-width {
+        flex-basis: calc(25% - 2em);
+      }
+
+      &.two-thirds-width {
+        flex-basis: calc(66.666667% - 2em);
+      }
+
+      &.three-quarter-width {
+        flex-basis: calc(75% - 2em);
+      }
+
+       &.one-fifth-width {
+        flex-basis: calc(20% - 2em);
+      }
+
+      &.four-fifths-width {
+        flex-basis: calc(80% - 2em);
+      }
+
+      &.one-sixth-width {
+        flex-basis: calc(16.666667% - 2em);
+      }
+
+      &.five-sixth-width {
+        flex-basis: calc(83.333334% - 2em);
+      }
+
+    }
+
+  }
+
+  > article, > div {
+    margin: 1em;
+  }
+
+  &.people-grid {
+  margin: 0 -2em;
+
+    > article, > div, > figure {
+      flex: 1 0 calc(50% - 4em);
+      flex-basis: calc(50% - 4em);
+      margin: 1em 2em;
+    }
+  }
+
+}
+
+.half-width {
+  flex: 0 0 calc(50% - 2em);
+  flex-basis: calc(50% - 2em);
+}
+
+// Flex table
+
+.flex-table {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.table-header {
+  display: none;
+
+  @include breakpoint(50em) {
+    color: $grass-green;
+    font-weight: 700;
+    background-color: #f0f0f0;
+  }
+}
+
+.table-row {
+  border-bottom: 1px solid $border-color;
+  width: 100%;
+
+  @include breakpoint(50em) {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+}
+
+
+.table-row-item {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 1em;
+
+  &::before {
+    content: attr(data-header);
+    width: 30%;
+    font-weight: 700;
+  }
+
+  @include breakpoint(50em) {
+    padding: 1em;
+
+    &::before {
+      content: none;
+    }
+
+  }
+
+  &:first-of-type {
+    font-weight: 700;
+  }
+
+  &.centered-cell {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.left-align-cell {
+    align-items: left;
+    justify-content: flex-start;
+  }
+
+  .right-align-cell {
+    align-items: right;
+    justify-content: flex-end;
+  }
+
+  .text-input {
+    height: 35px;
+  }
+
+  &.last-item {
+    flex: 0 0 100px;
+  }
+
+}
+
+.find-form-results {
+  .table-row-item {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.selected-funds-table {
+  .table-row-item {
+    align-items: center;
+  }
+}
+
+.selected-funds-table {
+  .table-row-item {
+    align-items: center;
+  }
+}
+
+.info-container {
+  border-bottom: 1px solid $border-color;
+}
+
+.info-blocks {
+  display: flex;
+
+  > article {
+    width: 50%;
+  }
+
+}

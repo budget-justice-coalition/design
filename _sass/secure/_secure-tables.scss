@@ -1,0 +1,472 @@
+.transaction-table {
+  @include rem(margin, 0 0 40px);
+  background-color: white;
+  text-align: left;
+
+  &.add-funds {
+    @include font-size(14);
+  }
+
+  &.card-table {
+    @include font-size(15);
+    margin: 0;
+
+    th, td {
+      @include rem(padding, 15px 12px);
+      vertical-align: bottom;
+    }
+
+  }
+
+  th, td {
+    @include rem(padding, 20px);
+    vertical-align: top;
+
+    &.center {
+      text-align: center;
+    }
+
+  }
+
+  th {
+    @include font-size(14);
+    color: $light-grey;
+    font-weight: 400;
+    text-align: right;
+
+    &:first-child {
+      @include rem(padding, 20px 0);
+      text-align: left;
+
+      svg {
+        vertical-align: middle;
+        height: 20px;
+        transform: translateY(-5px);
+        width: 20px;
+      }
+
+    }
+
+  }
+
+  .title-column {
+    text-align: left;
+  }
+
+  td {
+    border-top: 1px solid $lightest-grey;
+    position: relative;
+    text-align: right;
+
+    &:first-child {
+      @include rem(padding, 20px 0);
+      font-weight: 600;
+      text-align: left;
+    }
+
+  }
+
+  tr {
+
+    &.bank-selection {
+      display: none;
+
+      &.show-additional {
+        display: table-row;
+      }
+
+      td {
+        border: 0;
+      }
+    }
+
+    &.transact-additional {
+      td {
+        label {
+          font-weight: 400;
+        }
+      }
+
+      h3 {
+        color: $grass-green;
+        margin-top: 0;
+      }
+
+    }
+
+    &.additional-row {
+      td, th {
+        padding-bottom: 5px;
+      }
+
+      + tr {
+
+        th, td {
+          border: 0;
+          padding-top: 0;
+        }
+      }
+    }
+
+  }
+
+
+  tfoot {
+    td {
+      text-align: left;
+    }
+  }
+
+  select, .select-span {
+    font-weight: 400 !important;
+    height: 32px;
+  }
+
+  .small-select {
+    padding: 0;
+    font-size: 12px;
+
+    &::after {
+      right: 5px;
+      top: 45%;
+    }
+
+  }
+
+  select {
+    @include rem(padding, 0 12px 0 8px);
+  }
+
+  &.funds-list {
+    tr {
+      &:last-child {
+        td {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .no-border, .additional-tax-info {
+    td {
+      border: 0;
+    }
+  }
+
+}
+
+.details-control {
+
+  &.show-less {
+    line {
+      &:first-of-type {
+        display: none;
+      }
+    }
+  }
+
+}
+
+.total {
+  font-weight: 600;
+}
+
+.investor-number {
+  @include font-size(14);
+  color: #aaaaaa;
+  display: block;
+  font-weight: 400;
+}
+
+//  Standardised tables
+
+.standard-table {
+  @include font-size(14);
+
+  th, td {
+    @include rem(padding, 15px 12px 10px);
+    border-bottom: 1px solid $medium-grey;
+    text-align: left;
+    vertical-align: top;
+
+    &.align-right  {
+      text-align: right;
+    }
+
+    &.total {
+      font-weight: 600;
+    }
+
+  }
+
+  tfoot {
+    td {
+      border: 0;
+    }
+  }
+
+}
+
+// Asset tables
+
+.asset-table {
+  @include rem(margin, 15px 0 0);
+  @include font-size(14);
+
+  th, td {
+    @include rem(padding, 5px 0);
+    text-align: right;
+    vertical-align: bottom;
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  tfoot {
+    td {
+      border-top: 1px solid $medium-grey;
+      font-weight: 600;
+    }
+  }
+
+}
+
+.secure-data-table {
+  @include rem(margin, 0 0 30px);
+  background-color: white;
+  border: 1px solid $border-color;
+  border-bottom: 0;
+  font-size: inherit;
+
+  tr {
+    &.no-border {
+      td {
+        border-color: white;
+      }
+    }
+
+    &.additional-row {
+      background: $lightest-grey;
+      td {
+        @include rem(padding, 10px 20px 10px);
+      }
+    }
+
+  }
+
+  th, td {
+    @include rem(padding, 20px);
+    border-bottom: 1px solid $border-color;
+    vertical-align: top;
+  }
+
+  a {
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+  svg {
+    @include rem(width, 25px);
+  }
+
+  tfoot {
+    td {
+      @include rem(padding, 10px 20px);
+    }
+  }
+
+
+}
+
+.fixed-layout {
+  // table-layout: fixed;
+  @include breakpoint(37.5em) {
+    th, td {
+      &:first-of-type {
+        width: 310px;
+      }
+
+      &:nth-of-type(2) {
+        width: 150px;
+      }
+
+      &:nth-of-type(3) {
+        width: 150px;
+      }
+
+      &:nth-of-type(4) {
+        width: 180px;
+      }
+
+      &:nth-of-type(5) {
+        width: 180px;
+      }
+
+      &:nth-of-type(6) {
+        width: 260px;
+      }
+
+    }
+
+  }
+}
+
+.show-less {
+  svg {
+    .across-line {
+      display: none;
+    }
+  }
+}
+
+.additional {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.addional-row {
+
+  &:last-child {
+    .additional {
+      border: 0;
+    }
+  }
+
+}
+
+.additional-tax-info {
+ .additional {
+  border: 0;
+ }
+
+}
+
+.tax-data {
+  h3 {
+    color: $grass-green;
+    margin-bottom: 5px;
+  }
+}
+
+.tax-breakdown {
+  @include rem(padding, 0 0 5px);
+  @include font-size(14);
+  display: flex;
+  font-weight: 400;
+  justify-content: space-between;
+
+  span + span {
+    margin-left: 1rem;
+  }
+
+  &.tax-total {
+    @include rem(padding, 5px 0);
+    border-top: 1px solid $border-color;
+    font-weight: 600;
+  }
+
+}
+
+.additional-data {
+  @include font-size(14);
+  display: inline-block;
+
+  span {
+    display: inline-block;
+    width: 100%;
+
+    &:first-of-type {
+      color: $teal-green;
+    }
+  }
+}
+
+.data-download {
+  @include rem(margin, 0 10px 0 0);
+
+  svg {
+    height: 30px;
+  }
+
+}
+
+.fund-class {
+  @include font-size(13);
+  color: $teal-green;
+  display: block;
+}
+
+.td-dropdown {
+  position: relative;
+}
+
+td {
+  .td-dropdown-message {
+    @include rem(width, 350px);
+    @include rem(padding, 16px 16px 0);
+    background-color: white;
+    border: 1px solid $border-color;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    top: 100%;
+    z-index: 1;
+  }
+}
+
+// Show/hide table rows
+
+.summary-extra {
+  margin: -10px 0 0;
+  display: none;
+  position: relative;
+  z-index: 99;
+}
+
+// summary-table
+
+div[id*="funds"] {
+  .summary-table {
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+
+    label {
+      font-weight: bold;
+    }
+
+    @include breakpoint(37.5em) {
+
+      td, th {
+        text-align: right;
+
+        &:first-child {
+          text-align: left;
+        }
+      }
+    }
+
+    tr {
+      &:last-child {
+        border-bottom: 1px solid $border-color;
+      }
+    }
+  }
+}
+
+
+.detailblock {
+  vertical-align: top;
+
+  label {
+    font-weight: bold;
+  }
+}

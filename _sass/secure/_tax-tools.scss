@@ -1,0 +1,209 @@
+// Tax tools
+
+//  Copy
+
+.product-card-info {
+  @include rem(margin, 0 0 32px);
+}
+
+.color-amount {
+  color: $apple-green;
+}
+
+//  animations
+
+.bar-holder {
+  @include rem(margin, 48px 0 32px);
+  background-color: darken($bg-grey, 10%);
+  border-radius: 8px;
+  height: 15px;
+  width: 90%;
+
+  span {
+    @include font-size(12);
+    @include rem(padding, 5px);
+    animation-duration: 4s;
+    animation-name: fadeIn;
+    color: white;
+    display: block;
+    min-width: 50px;
+    position: absolute;
+    opacity: 1;
+    right: -20px;
+    top: -40px;
+  }
+
+}
+
+.bar {
+  border-radius: 8px;
+  background-color: $apple-green;
+  height: 15px;
+  margin-bottom: 10px;
+  position: relative;
+  animation-duration: 20s;
+  // animation-fill-mode: forwards;
+  animation-name: bar;
+  display: block;
+}
+
+.tool-grid {
+  align-items: flex-start;
+}
+
+.certificate-choice {
+  @include rem(padding, 40px);
+  @include rem(margin, 0 0 40px 0);
+  background-color: white;
+}
+
+.button-spacer {
+  @include rem(margin, 36px 0 0);
+  display: block;
+}
+
+.tool-link {
+  align-items: center;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+
+  &:hover {
+
+    .icon-link-svg {
+      transform: translateY(-2px);
+    }
+
+  }
+
+}
+
+.icon-links-grid {
+  list-style: none;
+
+  &.space-between {
+    justify-content: space-between;
+  }
+
+  .tax-calc {
+    display: none;
+  }
+}
+
+.latest-data {
+  @include rem(margin, 0 0 40px);
+  background-color: white;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 0 2rem;
+  width: 100%;
+}
+
+.icon-link {
+  @include rem(padding, 20px 30px);
+  @include font-size(14);
+  align-items: center;
+  background-color: white;
+  border: 0;
+  border-bottom: 4px solid white;
+  color: $grass-green;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 1em 2em;
+  max-width: 250px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms ease-in;
+
+  &.select-tax-type {
+    // border: 1px solid $border-color;
+  }
+
+  span {
+    @include rem(padding, 10px 0 0);
+    display: block;
+  }
+
+  &:hover {
+    background-color: white;
+
+    .icon-link-svg {
+      transform: translateY(-2px);
+    }
+
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.selected  {
+    border-bottom: 4px solid $apple-green;
+    outline: none;
+
+    .icon-link-svg {
+      transform: translateY(-2px);
+    }
+
+    .selected-icon {
+      display: block
+    }
+
+
+  }
+
+}
+
+.select-tax-year {
+  margin: 0 2em;
+  padding: 0;
+  min-width: 170px;
+}
+
+.selected-icon {
+  display: none;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+
+  top: 16px;
+  right: 40%;
+
+}
+
+.icon-link-svg {
+  height: 80px;
+  width: 70px;
+}
+
+.report-button {
+  @include rem(padding, 32px 80px 0 );
+  border-left: 1px dashed $border-color;
+  text-align: center;
+}
+
+.tab-content{
+  @include rem(padding, 40px);
+  display: none;
+  background: white;
+
+  .input-wrapper {
+    @include rem(margin, 40px 0);
+  }
+
+}
+
+.tab-content {
+
+  &.current{
+    display: inherit;
+  }
+}
+
+.flexible-range {
+  display: none;
+}

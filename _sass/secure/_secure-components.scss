@@ -1,0 +1,41 @@
+// Miscellaneous secure components
+
+.tree-list {
+  font-weight: 600;
+  list-style-type: none;
+
+  ul {
+    @include rem(margin, 10px 0);
+  }
+
+  li {
+    @include rem(margin, 0 0 10px);
+    list-style-type: none;
+  }
+
+}
+
+.tree-list-three {
+  font-weight: 400;
+}
+
+.input-desc {
+  @include rem(margin, 0 0 10px);
+  font-weight: 600;
+}
+
+// CGT calculator
+
+.export-button {
+  background-color: transparent;
+  border: 0;
+
+  + .button {
+    margin-left: 24px;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+}

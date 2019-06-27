@@ -1,0 +1,780 @@
+// Dashboard styles
+
+.dashboard-header {
+  @include font-size(20);
+}
+
+
+.dashboard-cards {
+  flex-wrap: nowrap;
+
+  + .dashboard-header {
+    margin-top: 4rem;
+  }
+
+  .tabs-wrapper {
+    margin-top: 3rem;
+  }
+
+}
+
+.edit-details {
+  border-bottom: 2px solid $link-color;
+  text-decoration: none;
+}
+
+.logged-in-timestamp {
+  @include rem(margin, 10px 0 0);
+}
+
+.investment-date {
+  @include font-size(16);
+  color: $teal-green;
+}
+
+// Investment filter
+
+.investment-filters, .investment-filters-fp {
+  @include rem(margin, 30px 0 0);
+
+  @include breakpoint(50em) {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      align-items: center;
+      display: flex;
+    }
+
+    &.distribution-filters {
+      div {
+        align-items: flex-start;
+      }
+    }
+
+    &.fixed {
+      @include rem(padding, 16px);
+      border-bottom: 1px solid $border-color;
+      background-color: white;
+      left: 0;
+      right: 0;
+      position: fixed;
+      top: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      z-index: 13;
+      box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.1);
+    }
+
+    span, label {
+      @include rem(margin, 0 10px);
+    }
+
+  }
+
+}
+
+.dashboard-filter-span {
+  display: inline-block;
+  @include rem(width, auto);
+  @include rem(margin, 10px 0);
+
+  @include breakpoint(50em) {
+    margin: 0;
+  }
+
+  select {
+    @include font-size(13);
+    @include rem(padding, 6px 25px 6px 8px);
+  }
+
+}
+
+.cag-filter-span {
+  @include rem(margin, 16px 0 0 16px);
+  @include rem(width, auto);
+  padding: 0;
+  transform: translateY(-0.25rem);
+
+  select {
+    @include rem(padding, 0 25px 0 8px);
+    background-color: transparent;
+    border: 0;
+  }
+
+}
+
+// Investment summary
+
+.investment-summary {
+  @include rem(margin, 16px 0);
+  @include rem(padding, 20px);
+  background-color: white;
+  border: 1px solid $border-color;
+  display: block !important;
+
+  @include breakpoint(50em) {
+    display: flex !important;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+
+      &:last-of-type {
+        .summary-amount  {
+          font-weight: 600;
+          transform: translateY(-0.25rem);
+        }
+
+      }
+
+    }
+  }
+
+}
+
+.summary-title {
+  @include font-size(14);
+  color: #b3b3b3; /* add to variables */
+  display: block;
+  text-transform: uppercase;
+
+  > span {
+    text-transform: none;
+  }
+
+}
+
+.summary-amount {
+  @include font-size(30);
+  color: $grass-green;
+  display: block;
+
+  &.total-amount {
+
+  }
+}
+
+.divider {
+  @include font-size(36);
+}
+
+.irr-access {
+  &:hover {
+    path {
+      fill: $nedbank-green;
+    }
+  }
+}
+
+// alt version
+
+.investment-summary-alt {
+  @include rem(margin, 16px 0);
+  @include rem(padding, 20px 32px);
+  background-color: white;
+  border: 1px solid $border-color;
+  display: block !important;
+
+  @include breakpoint(50em) {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+}
+
+.overall-amount {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-amount-large {
+  @include font-size(40);
+  color: $grass-green;
+  display: block;
+  transform: translateY(-8px);
+
+  @include breakpoint(30.625em) {
+    @include font-size(60);
+  }
+
+}
+
+.amount-calculation {
+  border-top: 1px dashed $border-color;
+  padding-top: 1rem;
+
+  @include breakpoint(53.750em) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.summary-title-alt {
+  font-size: .875rem;
+  color: darken(#b3b3b3, 10%);
+  display: block;
+  text-transform: uppercase;
+}
+
+// Product cards
+
+.current-products-cards {
+  margin: 0 -1rem;
+}
+
+.product-carousel  {
+  &.current-products-cards {
+    margin: 2rem 0;
+  }
+}
+
+.product-card {
+  @include rem(padding, 70px 20px);
+  background-color: white;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint(50em) {
+    flex-basis: calc(50% - 2em);
+    // max-width: 300px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &.no-border {
+    border: 0;
+  }
+
+  &.fp-featured {
+    border: 0;
+    padding: 1rem;
+
+    &:first-of-type {
+      border-right: 1px solid $border-color;
+
+    }
+
+  }
+
+}
+
+.owl-item {
+  .product-card {
+    height: 350px;
+  }
+
+  .product-cta-card {
+    padding: 2.5rem 0.5rem;
+  }
+
+}
+
+.product-alert {
+  @include font-size(14);
+  @include rem(margin, 20px 10px 0);
+  display: flex;
+  line-height: 1.2;
+  text-align: center;
+
+  svg {
+    @include rem(margin, 0 10px 0 0);
+    height: 30px;
+    width: 30px;
+  }
+
+}
+
+.product-card-header {
+  @include font-size(18);
+  text-transform: uppercase;
+  color: $medium-grey;
+  font-weight: 600;
+  margin: 0;
+}
+
+.product-ut {
+  color: $grass-green;
+}
+
+.product-tfi {
+  color: $apple-green;
+}
+
+.product-ra {
+  color: $product-teal;
+}
+
+.product-card-descriptor {
+  @include font-size(18);
+}
+
+.number-investors {
+  margin-bottom: 1rem;
+}
+
+.numbers-level-one {
+  @include rem(margin, 3px 0);
+  @include font-size(36);
+
+  sup {
+    @include font-size(18);
+    @include rem(top, -12px);
+    @include rem(left, -4px);
+  }
+
+  + .ghost-product-button {
+    @include rem(margin, 15px 0 0);
+  }
+
+}
+
+.product-movement {
+  @include font-size(20);
+  @include rem(margin, 0 0 16px);
+  color: $grass-green;
+
+  &.movement-down {
+    color: $orange-yellow;
+  }
+
+}
+
+.product-cta-card {
+  @include rem(padding, 40px);
+}
+
+.product-cta {
+  @include rem(max-width, 300px);
+  @include rem(margin, 20px 0 35px);
+  @include font-size(28);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.learn-button {
+  @include font-size(14);
+  @include rem(margin, 40px 0 25px);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.read-time {
+  margin: 0;
+}
+
+// Graphs
+
+.graph-container {
+  // @include rem(margin, 20px 0);
+}
+
+.graph-card {
+  @include rem(padding, 30px);
+  background-color: white;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+  @include breakpoint(50em) {
+    flex-basis: calc(50% - 2em);
+  }
+}
+
+.graph-card-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+}
+
+.asset-span {
+  @include rem(margin, 10px 0 0);
+  min-height: 51px;
+
+  &:first-of-type {
+    .asset-strip {
+      background-color: $apple-green;
+    }
+  }
+
+  &:nth-of-type(2) {
+    .asset-strip {
+      background-color: $orange-yellow;
+    }
+  }
+
+  &:nth-of-type(3) {
+    .asset-strip {
+      background-color: $blue-green;
+    }
+  }
+
+  &:nth-of-type(4) {
+    .asset-strip {
+      background-color: $teal-green;
+    }
+  }
+
+  &:nth-of-type(5) {
+    .asset-strip {
+      background-color: $medium-grey;
+    }
+  }
+
+
+}
+
+.asset-display {
+  @include font-size(13);
+  display: flex;
+  align-items: center;
+
+  span {
+
+  }
+
+}
+
+.asset-strip {
+  @include rem(padding, 4px 5px 2px 5px);
+  @include rem(margin, 2px 5px 0 0);
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  height: 10px;
+  max-width: 390px;
+}
+
+// Switch
+
+.graph-switch {
+  @include rem(margin, 20px 0 0);
+  @include font-size(13);
+  display: flex;
+  align-items: center;
+
+  .switch {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    @include rem(margin, 0 0 0 5px);
+    background: $medium-grey;
+    border-radius: 100px;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    text-indent: -9999px;
+    width: 35px;
+  }
+
+  label:after {
+    background: #fff;
+    border-radius: 90px;
+    content: '';
+    height: 14px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    transition: 0.3s;
+    width: 14px;
+  }
+
+  input:checked + label {
+    background: $apple-green;
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+
+  label:active:after {
+    width: 15px;
+  }
+
+}
+
+// Flip
+
+.flip-container {
+  min-height: 100px;
+  position: relative;
+  width: 100%;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.assets {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.back-table {
+  transform: rotateY( 180deg );
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.flipped {
+  transform: rotateY( 180deg );
+}
+
+// Action cards
+
+.current-action-cards {
+  margin: 0 -1rem;
+
+  @include breakpoint(50em) {
+    display: flex;
+  }
+}
+
+.transaction-cards {
+  margin: 0 -1rem;
+}
+
+.action-card {
+  margin: 1rem 1rem 2rem;
+
+  @include breakpoint(50em) {
+    flex-basis: calc(50% - 2em);
+  }
+}
+
+.action-card-link-holder {
+  @include rem(padding, 25px 30px);
+  align-items: center;
+  background-color: white;
+  border: 1px solid $border-color;
+  display: flex;
+  flex: 1 0 25%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+
+  &.not-allowed {
+
+    a {
+      opacity: 0.2;
+    }
+  }
+
+}
+
+.action-card-link {
+  @include font-size(14);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+
+  .tooltip {
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    z-index: 1;
+  }
+
+  svg {
+    height: 30px;
+  }
+
+  &:hover {
+    color: $apple-green;
+
+    svg {
+      transform: translateY(-1px);
+    }
+  }
+
+}
+
+.action-card-link-disabled, .action-card-link-disabled:hover {
+  color: #c1c1c1;
+  cursor: not-allowed;
+
+  svg {
+    transform: none;
+
+    path {
+      stroke: #c1c1c1;
+    }
+  }
+}
+
+// Distribution cards
+
+.investment-info-card {
+  @include rem(padding, 20px);
+  background-color: white;
+  border: 1px solid $border-color;
+
+  @include breakpoint(50em) {
+    flex: 1 0 0;
+  }
+}
+
+.investment-info-header {
+  @include rem(margin, 0 0 10px);
+  font-weight: 600;
+}
+
+.investment-info-data {
+  @include rem(padding, 10px);
+  @include font-size(15);
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  // &::before {
+  //   @include rem(margin, 0 10px 0 0);
+  //   background-color: $grass-green;
+  //   border-radius: 50%;
+  //   content: "";
+  //   display: inline-block;
+  //   height: 5px;
+  //   width: 5px;
+  // }
+
+  &.data-total {
+    background-color: $lightest-grey;
+    font-weight: bold;
+  }
+
+  &:hover {
+
+  }
+
+  span {
+    &:first-child {
+      color: $teal-green;
+      margin-right: auto;
+    }
+  }
+
+}
+
+// Top header section
+
+.flex-block {
+  @include rem(padding, 20px 0);
+
+  @include breakpoint(61.25em) {
+    align-items: center;
+    display: flex;
+  }
+
+}
+
+.select-product-holder {
+  @include rem(margin, 16px 0 0);
+  margin-left: auto;
+
+  .ghost-product-button {
+    @include rem(margin, 0 16px 16px 0);
+
+    @include breakpoint(61.25em) {
+      &.ghost-product-button {
+        @include rem(margin, 0 0 0 16px);
+      }
+    }
+  }
+
+  span {
+    @include rem(margin, 0 10px 0 0);
+  }
+
+}
+
+.select-product {
+  // @include rem(padding, 5px 20px);
+  // background-color: white;
+  // border: 1px solid $border-color;
+}
+
+// Miscellaneous typography
+
+.client-account {
+  font-weight: 400;
+}
+
+// Beneficiary detail
+
+.flex-header {
+  @include rem(margin, 32px 0 0);
+  display: flex;
+  align-items: center;
+}
+
+.beneficiary-detail {
+  padding: 1.875rem;
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.name-added {
+  flex: 1 0 50%;
+
+  p {
+    @include font-size(14);
+    margin: 0;
+  }
+
+  .name {
+    font-weight: 600;
+   }
+
+}
+
+.numbers-pill-small {
+  padding: .0625rem .3125rem;
+  font-size: .875rem;
+  font-weight: 600;
+  color: $grass-green;
+  display: inline-block;
+}
+
+.chevron {
+  padding-top: 7px;
+}
+
+.add-beneficiary-link {
+  color: $grass-green;
+  margin-left: auto;
+  text-decoration: none;
+}

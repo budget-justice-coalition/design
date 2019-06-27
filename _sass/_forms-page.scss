@@ -1,0 +1,116 @@
+// Forms listing page
+
+.forms-container {
+  @include rem(margin, 0 0 40px);
+}
+
+.forms-list {
+  @include rem(padding, 24px 25px 20px);
+  background-color: white;
+  list-style-type: none;
+  margin: 0;
+
+  &.forms-no-padding {
+    @include rem(padding, 0 0 20px);
+  }
+
+  li {
+    @include rem(margin, 0 0 15px);
+    @include rem(padding, 0 0 15px);
+    border-bottom: 1px dotted $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:last-child {
+      border: 0;
+      justify-content: flex-end;
+    }
+
+  }
+
+}
+
+.form-link {
+  color: $grass-green;
+  display: flex;
+  text-decoration: none;
+
+  &.all-forms-download {
+    @include rem(padding, 20px 0 0);
+    color: $apple-green;
+    display: inline-block;
+    margin-left: auto;
+
+    &.is-hidden {
+      display: none;
+    }
+
+
+  }
+
+  // &::after {
+  //   @include rem(margin, 0 0 0 10px);
+  //   content: url(/content/dam/NGISingleSiteContent/images/vectors/download.svg);
+  // }
+
+}
+
+// Form search
+
+.find-form-results {
+  margin-bottom: 4rem;
+}
+
+.form-search-holder {
+  align-items: center;
+  display: flex;
+
+  input {
+    margin-right: 0.5rem;
+  }
+
+}
+
+.form-instruction-holder {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+
+  > div {
+    align-items: center;
+    display: flex;
+  }
+
+  p {
+    @include font-size(18);
+    margin: 0 0 1rem;
+
+    a {
+      color: $grass-green;
+      font-weight: 600;
+      transition: color 400ms ease-in;
+
+      &:hover {
+        color: $nedbank-green;
+      }
+
+    }
+
+  }
+
+  svg {
+    margin: 0 0.875rem 0 0;
+    vertical-align: middle;
+  }
+
+}
+
+.all-forms {
+  margin: 0 0 0 1rem;
+}
+
+.form-search-term {
+  color: $grass-green;
+  font-weight: 600;
+}

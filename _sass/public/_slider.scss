@@ -1,0 +1,255 @@
+// Bullshit slider crap
+
+.slider-container {
+  clear: both;
+  position: relative;
+}
+
+.item {
+  min-height: 350px;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include breakpoint(33.125em) {
+    min-height: 450px;
+  }
+}
+
+.slider-content {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.slider-image {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.slider-text {
+  @include rem(padding, 30px 0 20px);
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  max-width: 450px;
+
+  @include breakpoint(33.125em) {
+    padding: 0;
+  }
+
+
+  .button + .button {
+    @include rem(margin, 10px 20px 20px 0);
+
+    @include breakpoint(21.875em) {
+      @include rem(margin, 0 0 0 15px);
+    }
+
+  }
+
+
+}
+
+.slider-header {
+  @include font-size(30);
+  color: white;
+  font-weight: 300;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  @include breakpoint(33.125em) {
+    @include font-size(38);
+  }
+
+  span {
+    font-weight: 600;
+  }
+
+}
+
+.fp-component, .cash-component {
+  background-color: $slider-green;
+  // background-color: #002012;
+  // background-color: #cfe2de;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+}
+
+
+.fp-slider-image, .cash-slider-image {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 470px;
+  max-height: 470px;
+
+  img {
+    display: block;
+  }
+}
+
+.fp-slider-image {
+  min-height: 340px;
+  max-height: 340px;
+}
+
+
+// .cash-slider-image {
+//   min-height: 400px;
+//   max-height: 400px;
+// }
+
+.slider-header-fp {
+  @include font-size(48);
+  color: $heritage-green;
+  font-weight: 600;
+  color: white;
+}
+
+.fp-slider-text {
+  margin: 0 auto;
+  max-width: 1200px;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  .hero-text {
+    @include rem(padding, 32px 0 0);
+    float: none;
+    margin: 0;
+  }
+
+  p {
+    @include font-size(18);
+    color: white;
+  }
+}
+
+.cash-slider-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cash-slider-text {
+  max-width: 400px;
+}
+
+.cash-hero-text {
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.hero-text {
+  @include rem(margin, 140px 0 0);
+  float: left;
+  max-width: 500px;
+}
+
+.fp-slider-header {
+  color: white;
+}
+
+.fp-cta {
+  @include rem(padding, 30px 30px 20px);
+  background-color: $bg-grey;
+  background-color: rgba(255,255,255,1);
+  box-shadow: 4px 4px rgba(0,0,0,0.2);
+  bottom: -40px;
+  display: none;
+  height: 360px;
+  position: absolute;
+  right: 0;
+  width: 400px;
+
+  @include breakpoint(64em) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+}
+
+.fp-cta-header {
+  @include font-size(18);
+  font-weight: 600;
+}
+
+.fp-cta-links {
+  list-style-type: none;
+
+  a {
+    @include rem(padding, 10px 5px);
+    border-bottom: 1px solid $border-color;
+    // color: white;
+    display: block;
+    text-decoration: none;
+    transition: all 250ms ease-in-out;
+
+    &:hover {
+      background-color: $teal-green;
+      background-color: rgba(0,0,0,0.1);
+      color: white;
+      color: inherit;
+    }
+
+  }
+
+}
+
+.fp-banner-image {
+  height: 185px;
+  width: 331px;
+}
+
+// Cash elements
+
+.cash-ctas {
+  background-color: white;
+  padding: 1rem 2rem 2rem;
+}
+
+.yield-table-header {
+  border-bottom: solid 1px #ccc;
+  padding: 0 0 1rem;
+  margin: 1rem 0 0;
+}
+
+.yield-data {
+
+  th {
+    border-bottom: .0625rem solid $border-color;
+    padding: 1.25rem 1rem .625rem;
+    text-align: left;
+  }
+
+  td {
+    border-bottom: .0625rem dotted $border-color;
+    padding: 1.25rem 1rem .625rem;
+    text-align: right;
+  }
+
+}
+
+.watch-button {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  svg {
+    height: 13px;
+    transform: translateY(-2px);
+    vertical-align: middle;
+    width: 20px;
+  }
+}

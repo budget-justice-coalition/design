@@ -1,0 +1,654 @@
+// Transaction styles
+
+.select-amount-type {
+  @include rem(margin, 0 0 20px);
+  @include rem(padding, 20px 20px 10px);
+  background-color: white;
+}
+
+.transaction-type {
+  @include rem(padding, 20px);
+  background-color: white;
+
+  span {
+    @include rem(margin, 0 20px 0 0);
+  }
+
+}
+
+
+.details-block {
+  @include rem(margin, 0 0 80px);
+
+  > div {
+     background-color: white;
+    @include rem('padding', 20px);
+  }
+}
+
+.step-heading {
+  // margin-top: 0;
+}
+
+.transaction-item-list {
+  @include font-size(16);
+  list-style: none;
+  padding: 0;
+}
+
+.eac-block {
+  @include rem(padding, 20px 0);
+  border-top: 1px solid $border-color;
+}
+
+.eac-amount {
+  color: $grass-green;
+  font-weight: 600;
+}
+
+.show-eac {
+  color: $grass-green;
+  text-decoration: underline;
+}
+
+.explainer-list {
+  @include rem(margin, 20px 0);
+  @include rem(padding, 0 0 0 20px);
+  @include font-size(14);
+}
+
+// Special form elements
+
+.input-block-padding + .input-block-padding {
+  @include rem(padding, 0 0 10px 0);
+}
+
+.lump-sum-input {
+  @include rem(padding, 20px 0);
+}
+
+.percentage-input {
+  @include rem(width, 85px);
+  text-align: right;
+}
+
+.inline-span {
+  @include rem('margin', 0 10px);
+}
+
+.inline-label {
+  @include rem('margin', 0 10px 0 0);
+}
+
+.inline-label-left {
+  @include rem('margin', 0 0 0 10px);
+}
+
+.block-label {
+  display: block;
+}
+
+// Debit order specific
+
+.transaction-buttons {
+  @include rem('padding', 15px);
+  background-color: lighten(black, 90%);
+  border: 1px solid lighten(black, 80%);
+}
+
+.debit-col1 {
+  width: 12%;
+}
+
+.debit-col2 {
+  width: 12%;
+}
+
+.debit-col3 {
+  width: 8%;
+}
+
+.debit-col4 {
+  width: 5%;
+}
+
+.debit-col5 {
+  width: 5%;
+}
+
+.debit-col6 {
+  width: 8%;
+}
+
+.fp-details {
+  @include rem('margin', 0 0 20px);
+}
+
+
+// Specific table styles
+
+.add-funds {
+  table-layout: auto;
+  @include font-size(14);
+
+  @include breakpoint(37.563em) {
+    .column-one {
+      width: 30%;
+    }
+    .column-two {
+      width: 17%;
+    }
+    .column-three {
+      width: 17%;
+    }
+    .column-four {
+      width: 16%;
+    }
+    .column-five {
+      width: 10%;
+    }
+  }
+
+  caption {
+    @include rem(margin, 0 0 10px);
+    @include font-size(18);
+    text-align: left;
+  }
+
+  &.fees {
+    th {
+      border-right: 1px solid #ccc;
+
+      vertical-align: top;
+    }
+  }
+
+  .checkbox-custom-label, .radio-custom-label {
+    padding-left: 30px;
+  }
+
+  .checkbox-custom-label:before, .radio-custom-label:before {
+    position: absolute;
+    left: 0;
+    top: 5px;
+  }
+
+  .checkbox-custom:checked+.checkbox-custom-label:before, .radio-custom:checked+.radio-custom-label:before {
+    line-height: 0.75rem;
+  }
+
+  input[type="number"], input[type="text"] {
+    text-align: right;
+  }
+
+}
+
+.top-row {
+  th {
+    text-align: center;
+    background-color: lighten(black, 75%)
+  }
+}
+
+.highlight {
+  td {
+    background-color: $lightest-grey;
+    border-color: lighten(#6f8e7f, 10%);
+    color: darken($base-color, 80%);
+  }
+}
+
+.value-column {
+    text-align: left;
+}
+
+.standard-width {
+    width: 11%;
+}
+
+.input-width {
+  width: 12.5%;
+  min-width: 113px;
+}
+
+.cag-name {
+  // background-color: $teal-green;
+  // color: white;
+}
+
+.select-add {
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.select-fund {
+  max-width: 300px;
+}
+
+.total-to-invest {
+  @include font-size(18);
+  text-align: right;
+}
+
+.numeric-amount {
+  font-weight: 700;
+  color: $grass-green;
+}
+
+// Sidebar lists and nav
+
+.transact-sidebar {
+  @include rem(margin, 40px 0 0);
+  will-change: transform;
+
+  &.fixed {
+    @include breakpoint(51.563em) {
+      left: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 13;
+    }
+  }
+
+
+}
+
+.nav-list {
+  @include rem(padding, 0 16px);
+  @include rem(margin, 0 auto 48px);
+  background-color: white;
+  border-bottom: 1px solid $border-color;
+  counter-reset: li;
+  list-style: none;
+  max-width: 1200px;
+
+  @include breakpoint(51.563em) {
+    @include rem(padding, 0 30px);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    @include rem('padding', 15px 0 15px 35px);
+    color: $light-grey;
+    display: block;
+    margin: 0;
+    position: relative;
+
+    @include breakpoint(51.563em) {
+      @include rem('padding', 25px 0 25px 35px);
+    }
+
+    &.active {
+      color: $grass-green;
+      border-bottom: 4px solid $grass-green;
+
+      &::before {
+        border-color: $grass-green;;
+        color: $grass-green;;
+      }
+
+    }
+
+    &.completed {
+      color: $apple-green;
+
+      &::before {
+        border-color: $apple-green;
+        color: $apple-green;
+        content: "\2713";
+      }
+    }
+
+    &.error {
+      color: $warning-red;
+
+      &::before {
+        border-color: $warning-red;
+        color: $warning-red;
+        content: "!";
+      }
+    }
+
+    &::before {
+      @include font-size(12);
+      border-radius: 100%;
+      border: 1px solid $light-grey;
+      color: $light-grey;
+      content: counter(li);
+      counter-increment: li;
+      font-weight: normal;
+      height: 25px;
+      left: 0;
+      line-height: 25px;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 25px;
+    }
+
+  }
+
+}
+
+.explainer-text {
+  @include rem(margin, 10px 0);
+  @include font-size(14);
+}
+
+// Bank accounts
+
+.bank-account-list {
+  @include rem('margin', 10px 0 20px);
+  margin-top: 10px;
+  position: relative;
+}
+
+.header-wrapper {
+  @include rem('padding', 10px);
+  @include rem('margin', 15px 0 0);
+  background-color: $lightest-grey;
+}
+
+.expandable-div-content {
+  @extend %clearfix;
+  @include font-size(14);
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  div {
+    @include rem('padding', 5px 10px);
+    border-bottom: solid 1px #ddd;
+    float: left;
+    height: 50px;
+    line-height: 40px;
+  }
+}
+
+.expandable-div-content .expandable-div-property-name {
+  width: 35%;
+  clear: left;
+}
+
+.expandable-div-content .expandable-div-property-value {
+    width: 65%;
+}
+
+.terms-and-conditions-wrapper {
+  @include rem('padding', 20px);
+  background-color: lighten(black, 95%);
+}
+
+// Special butons
+
+.wizard-button {
+  @include rem(margin, 30px 0 0);
+  float: right;
+
+  &::after {
+    content: url(../images/vectors/collapse-icon-minimal-white.svg);
+    display: inline-block;
+    transform: translateY(2px);
+    vertical-align: middle;
+  }
+
+  &[disabled] {
+    &::after {
+      opacity: 0.2;
+    }
+  }
+
+}
+
+// Transaction lists
+
+.transaction-list {
+  @include rem(padding, 40px 0);
+}
+
+.tax-free-summary {
+  @include rem(margin, 0 0 40px);
+
+  .summary-amount {
+    @include font-size(24);
+  }
+}
+
+.contribution-explainer {
+  @include font-size(14);
+  color: $grass-green;
+}
+
+// RA
+
+.ra-details {
+  @include rem(margin, 16px 0);
+
+  span {
+    @include rem(margin, 0 32px 0 0);
+    font-weight: 600;
+  }
+
+}
+
+.add-beneficiary {
+
+  @include breakpoint(50em) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -2em;
+
+    .input-block {
+      margin: 0 2rem 2rem;
+      flex: 0 0 calc(50% - 4em);
+      width: calc(50% - 4em);
+    }
+
+  }
+
+  .select-span {
+    width: auto;
+  }
+
+
+}
+
+// Transaction summary
+
+.summary-form {
+  margin-top: 1rem;
+}
+
+.notes {
+  @include rem(margin, 32px 0);
+}
+
+.confirmation-eac {
+ @include rem(margin, 16px 0);
+}
+
+.transaction-summary-report table th {
+  height: 25px !important;
+}
+
+.transaction-summary-report table th {
+  padding: 10px !important;
+  background-color: $bg-color;
+  text-align: center;
+
+  &.no-bg {
+    background-color: transparent;
+  }
+
+}
+
+.transaction-summary-report table td {
+  padding: 10px !important;
+  text-align: center;
+}
+
+.transaction-summary-report td.left-align {
+  text-align: left !important;
+}
+
+.transaction-summary-report td.right-align {
+  text-align: right !important;
+}
+
+.transaction-summary-report .bold {
+  font-weight: bold !important;
+}
+
+.transaction-summary-report .clear {
+  clear: both !important;
+}
+
+.report-results {
+  position: relative;
+}
+
+.report-results .logo {
+  text-align: right;
+}
+.report-results .logo .heading {
+  float: left;
+  margin-top: 38px;
+}
+
+#content .report-results .logo .heading h2 {
+  font-size: 27px;
+  color:rgb(34, 81, 61) !important;
+}
+
+.transaction-summary-report .disclaimer {
+  color: red !important;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin-top: 0;
+}
+
+.transaction-summary-report table.summary-table {
+  width: 100% !important;
+
+  td {
+    padding: 0 !important;
+    text-align: left;
+  }
+
+}
+
+.transaction-summary-report .cell-border-right {
+  border-right: solid 1px black !important;
+}
+
+.transaction-summary-report .padding-left-10 {
+  padding-left: 10px !important;
+}
+
+.transaction-summary-report .padding-left-tab {
+  padding-left: 30px !important;
+}
+
+table.black-border {
+  margin-bottom: 1rem;
+
+  th{
+    border:  solid 1px $nedbank-green;
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+table.black-border td {
+  border:  solid 1px black;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.contact-details {
+  margin-bottom: 3rem;
+}
+
+// Reg info check
+
+.reg-info {
+  @include rem(margin, 32px 0);
+  @include rem(padding, 10px 16px);
+  background-color: white;
+
+  svg {
+    transform: translateY(-3px);
+    vertical-align: middle;
+  }
+
+}
+
+// disable
+
+.unable-to-transact {
+  color: rgba(0,0,0,0.1) !important;
+  cursor: not-allowed;
+  position: relative;
+
+  .transaction-table td,
+  .nav-list,
+  .nav-list li,
+  .nav-list li.active,
+  .nav-list li.active::before,
+  .nav-list li::before,
+  h2,
+  p,
+  label,
+  a,
+  td,
+  th,
+  span,
+  input,
+  select,
+  .select-span::after,
+  input::after,
+  label::before {
+    border-color: rgba(0,0,0,0.1) !important;
+    border-top-color: rgba(0,0,0,0.1) !important;
+    color: rgba(0,0,0,0.1) !important;
+    font-weight: 400;
+  }
+
+  .tab-controls a.active::before {
+    background-color: rgba(0,0,0,0.1) !important;
+  }
+
+  .transaction-table td {
+    border: 0;
+  }
+
+  .transact-sidebar.fixed {
+    position: static;
+  }
+
+}
+
+.transact-overlay {
+  background-color: rgba(0, 0, 0, 0);
+  cursor: not-allowed;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}

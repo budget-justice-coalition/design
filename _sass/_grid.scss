@@ -1,0 +1,78 @@
+// Grid  ================================================================================================= */
+
+/// @ignore Grid elements should be agnostic. If for example padding is required add that to containers inside the grid elements - usually this would be an article, but be careful about proper semantic use of these elements.
+
+
+// Set Grid (1170px default)
+$column-width: 80px;
+$gutter: 20px;
+$columns: 12;
+$padding: $gutter;
+
+$responsive: true;
+
+$width: ($column-width * $columns) + ($gutter * ($columns - 1));
+
+.row {
+
+  @if $responsive == true
+    {
+      max-width: $width;
+    }
+  @else {
+    width: $width;
+  }
+  // margin: 1.25em auto; // Will center container and add top and bottom space
+  // padding: 0 $padding; // Padding based on variable above
+}
+
+// Define Individual Grid Classes
+@for $i from 1 to $columns
+ {
+  // Calculate grid size in pixels
+  $grid: ($column-width * $i) + ($gutter * ($i - 1));
+
+  // Calculate responsive grid sizes if required
+  @if $responsive == true
+  {
+    // Calculate grid size in pixels
+    $grid: ($grid / $width) * 100%;
+
+    // Get Gutter Percentage for Grids
+    $gutter-percentage: ($gutter / $width) * 100%;
+
+    .grid#{$i}
+      {
+        margin: 0; // change margin if required
+        width: 100%;
+
+      // Breakpoint should be changed based on content needs
+      @include breakpoint(64em) {
+        float: left;
+        margin: 0 0 0 $gutter-percentage;
+        width: $grid;
+      }
+    }
+  }
+  @else
+  {
+    $grid: $grid;
+    .grid#{$i}
+      {
+      margin-left: $gutter;
+      width: $grid;
+      }
+  }
+}
+
+.row {
+  @extend %clearfix;
+  position: relative;
+}
+
+.clear {
+  clear: left;
+  margin-left: 0;
+}
+
+

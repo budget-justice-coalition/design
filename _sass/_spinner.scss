@@ -1,0 +1,32 @@
+// Spinner
+
+.spinner {
+  animation: loading .75s linear infinite;
+  color: transparent;
+  height: 4.4rem;
+  width: 4.4rem;
+}
+
+.spinner-color-teal {
+  fill: $teal-green;
+}
+
+.spinner-medium {
+  height: 3rem;
+  width: 3rem;
+}
+
+.spinner-small {
+  height: 2rem;
+  width: 2rem;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner--color-white {
+  fill: white;
+}

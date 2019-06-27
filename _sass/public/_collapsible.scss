@@ -1,0 +1,90 @@
+// Accordion styles
+
+.collapsible {
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+
+  p {
+    @include rem(margin, 20px 20px 40px);
+  }
+
+}
+
+.collapsible-header {
+  @include rem(padding, 20px 25px 20px);
+  border-bottom: 1px solid $border-color;
+  color: $grass-green;
+  font-weight: 400;
+  margin: 0;
+  position: relative;
+
+  span {
+    @include font-size(16);
+    @include rem(padding, 3px 0 0);
+    display: block;
+    height: 23px;
+    position: absolute;
+    right: 20px;
+    text-transform: none;
+    top: 30%;
+    transition: all 150ms linear;
+  }
+
+}
+
+.collapsible-closed {
+  span {
+
+    &::before {
+      content: "Show";
+    }
+
+    svg {
+      vertical-align: middle;
+    }
+
+    &.caret-down {
+
+      &::before {
+        content: "Hide ";
+      }
+
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+
+  }
+
+}
+
+.collapsible-open {
+  span {
+
+    &::before {
+      content: "Hide ";
+    }
+
+    svg {
+      vertical-align: middle;
+    }
+
+    &.caret-down {
+
+      &::before {
+        content: "Show ";
+      }
+
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+
+  }
+
+}
+
+.accordion-content {
+  @include rem(margin, 0 0 60px);
+}

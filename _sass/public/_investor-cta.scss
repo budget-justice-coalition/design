@@ -1,0 +1,90 @@
+// Styles for inverstor cta
+
+.flex-grid {
+  .investor-cta {
+    @include rem(padding, 20px 40px);
+    text-align: center;
+
+    @include breakpoint(50em) {
+      flex: 0 0 298px;
+      flex: 0 0 calc(33.33334% - 2em);
+    }
+
+    p {
+      @include font-size(15);
+      max-width: 100%;
+    }
+
+    svg {
+      margin: 0 auto;
+      width: 50px;
+    }
+  }
+}
+
+.investor-cta-icon {
+  height: 70px;
+}
+
+.investor-cta-header {
+  @include font-size(16);
+  text-transform: uppercase;
+}
+
+.investor-cta-link, .fp-cta-link, .summary-show {
+  @include font-size(14);
+  color: $grass-green;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  svg {
+    @include rem(left, 2px);
+    @include rem(top, -1px);
+    position: relative;
+  }
+
+  &::after {
+    content: url(/content/dam/NGISingleSiteContent/images/vectors/right-arrow-small.svg);
+    display: inline-block;
+    transform: translate(6px, -1px);
+  }
+
+  &.cta-link-active {
+    &::after {
+      transform: rotate(-90deg) translate(1px, 8px);
+    }
+  }
+
+}
+
+.fp-cta-link {
+  &::after {
+    content: url(/content/dam/NGISingleSiteContent/images/vectors/right-arrow-small-white.svg);
+  }
+}
+
+.unit-trust-info {
+  @include font-size(15);
+  text-align: left;
+
+  li {
+    &:first-child {
+      // @include rem(margin, 0 0 10px -16px);
+      // list-style-type: none;
+    }
+  }
+
+}
+
+.block-link {
+  text-decoration: none;
+}
+
+.fund-extra {
+  @include rem(padding, 40px 0 0);
+
+  > div {
+    @include rem(padding, 0 20px);
+  }
+}

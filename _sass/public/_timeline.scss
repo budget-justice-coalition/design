@@ -1,0 +1,321 @@
+
+.js {
+
+  ol, ul {
+    list-style: none;
+  }
+
+  .timeline {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .timeline--loaded { // show the timeline after dates position has been set (using JavaScript)
+    opacity: 1;
+  }
+
+  .timeline__container {
+    position: relative;
+    height: 100px;
+  }
+
+  .timeline__dates {
+    position: relative;
+    height: 100%;
+    margin: 0 40px;
+    overflow: hidden;
+
+    &::after, &::before { // these are used to create a shadow effect at the sides of the timeline
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      height: 100%;
+      width: 20px;
+    }
+
+    &::before {
+      left: 0;
+      // background: linear-gradient(to right, $grass-green, $grass-green);
+    }
+
+    &::after {
+      right: 0;
+      // background: linear-gradient(to left, $grass-green, $grass-green);
+    }
+  }
+
+  .timeline__line { // grey line
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 49px;
+    height: 2px; // width will be set using JavaScript
+    // background-color: lighten($grass-green, 0.9);
+    transition: transform 0.4s;
+  }
+
+  .timeline__filling-line { // green filling line
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(74, 93%, 32%);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s;
+  }
+
+  .timeline__date {
+    position: absolute;
+    bottom: 0; // left position will be set using JavaScript
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 0.75em;
+    user-select: none;
+    text-decoration: none;
+
+    &::after { // this is used to create the event spot
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -5px;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      border-width: 2px;
+      border-style: solid;
+      border-color: lighten($grass-green, 0.9);
+      background-color: $grass-green;
+      transition: background-color 0.3s, border-color .3s;
+    }
+
+    &:hover::after {
+      background-color: $grass-green;
+      border-color: $grass-green;
+    }
+
+    // @include breakpoint(md) {
+    //   font-size: 0.7em;
+    // }
+  }
+
+  .timeline__date--selected {
+    font-weight: 600;
+    pointer-events: none;
+
+    &::after {
+      background-color: $grass-green;
+      border-color: $grass-green;
+    }
+  }
+
+  .timeline__date--older-event::after {
+    border-color: var(--cd-color-2);
+  }
+
+  .timeline__navigation { // arrows to navigate the timeline
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: hsl(0, 0%, 87.3%);
+    transition: border-color 0.3s;
+
+    &::after { // arrow icon
+      content: '';
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      background: url(/content/dam/NGISingleSiteContent/images/vectors/cd-arrow.svg) no-repeat 0 0;
+    }
+
+    &:hover {
+     border-color: $grass-green;
+    }
+  }
+
+  .timeline__navigation--prev {
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .timeline__navigation--next {
+    right: 0;
+  }
+
+  .timeline__navigation--inactive {
+    cursor: not-allowed;
+
+    &::after {
+      background-position: 0 -16px;
+    }
+
+    &:hover {
+     border-color: hsl(0, 0%, 87.3%);
+    }
+  }
+
+  .timeline__events { // container of events info
+
+    overflow: hidden;
+    position: relative;
+    transition: height .4s;
+    width: 100%;
+  }
+
+  .timeline__event { // single event info
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    width: 100%;
+    z-index: 1;
+  }
+
+  .timeline__event--selected { // selected event info
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .timeline__event-content {
+
+    @include breakpoint(50em) {
+      display: flex;
+      margin: 0 -1em;
+    }
+
+  }
+
+  .timeline__event-column {
+
+    @include breakpoint(50em) {
+      flex: 1;
+      min-width: calc(33.3333% - 1em);
+      max-width: calc(50% - 1em);
+      margin: 0 1em;
+    }
+  }
+
+
+  .timeline__event--enter-right,
+  .timeline__event--leave-right { // animate event info
+    animation-name: cd-enter-right;
+  }
+
+  .timeline__event--enter-left,
+  .timeline__event--leave-left { // animate event info
+    animation-name: cd-enter-left;
+  }
+
+  .timeline__event--leave-right,
+  .timeline__event--leave-left {
+    animation-direction: reverse;
+  }
+
+  .timeline__event-content {
+    .flex-grid {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .timeline__event-title {
+    display: flex;
+    align-items: center;
+    height: 85px;
+    margin-bottom: 0;
+  }
+
+  .timeline__event-date {
+    display: block;
+    font-style: italic;
+
+    &::before {
+      content: '- ';
+    }
+  }
+
+  .timeline__event-description  {
+    background-color: $bg-grey;
+    display: flex;
+    flex-direction: column;
+    font-size: 87.5%;
+    padding: 1rem 2rem 0 2rem;
+    margin: 1rem 0;
+  }
+
+}
+
+.text--replace {
+  overflow: hidden;
+  color: transparent;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+@keyframes cd-enter-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes cd-enter-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+html:not(.js) .timeline__dates,
+html:not(.js) .timeline__navigation { // hide timeline dates if js is disabled
+  display: none;
+}
+
+// award blocks
+
+.awards-image {
+  max-width: 250px;
+}
+
+.awards-title {
+  font-weight: 600;
+  margin-top: 0;
+  text-transform: uppercase;
+
+  sup {
+    font-weight: 600;
+  }
+
+}
+
+.awards-description {
+  // margin-top: auto;
+}
+

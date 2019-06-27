@@ -1,0 +1,166 @@
+// Profile and settings
+
+.remove-bank-account {
+  @include rem(margin, 0 0 32px);
+  @include font-size(16);
+}
+
+.remove-bank {
+  @include rem(margin, 0 0 32px);
+  border-bottom: 1px solid $border-color;
+}
+
+.bin {
+  height: 18px;
+  transform: translateY(-2px);
+  vertical-align: middle;
+  width: 15px;
+}
+
+.bank-removed {
+  @include rem(margin, 0 0 32px);
+}
+
+
+.profile-block {
+  display: flex;
+}
+
+.profile-tabs {
+  @include rem(margin, 48px 0);
+}
+
+.image-settings {
+  @include rem(margin, 0 24px 0 0);
+  border: 1px solid $lime-green;
+  border-radius: 100%;
+  align-items: center;
+  display: flex;
+  font-style: normal;
+  justify-content: center;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.8;
+
+  h3 {
+    margin: 0;
+  }
+
+}
+
+.edit-preferred-name {
+  border: 0;
+  color: $apple-green;
+
+  &:focus {
+    border-bottom: 2px solid $apple-green;
+    outline: none;
+  }
+
+}
+
+.update-details-button {
+  @include rem(max-width, 260px);
+  @include rem(margin, 0 0 40px);
+}
+
+.edit-name {
+  text-align: left;
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+.save-preferred-name {
+
+}
+
+.profile-block-detail {
+  @include rem(padding, 48px 0 0);
+}
+
+.profile-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1em 1em;
+
+  div {
+    @include rem(margin, 0 16px 0);
+    align-itens: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 calc(50% - 2em);
+  }
+
+  .select-span {
+    @include rem(margin, 0 0 16px);
+  }
+
+}
+
+.change-detail {
+  @include rem(max-width, 400px);
+  @include rem(width, 300px);
+  background-color: $bg-grey;
+  border: 0;
+  color: $apple-green;
+  border-bottom: 1px solid $border-color;
+
+  @include breakpoint(29.250em) {
+    @include rem(width, 400px);
+  }
+
+  &:focus {
+    border-bottom: 1px solid $apple-green;
+  }
+
+  &:disabled {
+    color: $light-grey;
+    cursor: not-allowed;
+  }
+
+}
+
+label + .change-detail, .select-security {
+  margin-bottom: 20px;
+}
+
+// FICA
+
+.fica-table {
+  @include font-size(14);
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin-bottom: 3rem;
+  width: 100%;
+
+  td {
+    font-weight: 600;
+    vertical-align: top;
+    padding: 10px;
+  }
+
+  tr {
+    background-color: lighten($bg-color, 3%);
+
+    &:nth-of-type(even) {
+      background-color: $bg-color;
+    }
+  }
+
+}
+
+.fica-type {
+  float: right;
+  font-weight: 400;
+}
+
+

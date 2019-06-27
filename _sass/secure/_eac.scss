@@ -1,0 +1,114 @@
+// EAC calculator
+
+.eac-setup {
+  display: flex;
+}
+
+.eac-stepper {
+  @include rem(margin, 0 40px 0 0);
+  display: flex;
+}
+
+.input-wrapper-eac {
+  + .input-wrapper-eac {
+    @include rem(margin, 32px 0 0);
+  }
+}
+
+.step-label {
+  @include rem(margin, 0 0 0 40px);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+// Numbers
+
+.eac-step {
+  border: 2px solid $grass-green;
+  color: $grass-green;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.eac-secure-wrapper {
+  margin-bottom: 6rem;
+}
+
+.eac-selection, .eac-selection-secure {
+
+  .table-row {
+
+    &:last-child {
+      border: 0;
+    }
+
+  }
+}
+
+.eac-fund-name {
+  @include rem(margin, 16px 0 5px);
+  font-weight: 600;
+}
+
+
+.table-row-item {
+  &[data-header*="amount"] {
+    font-weight: 400;
+  }
+
+  &.with-error {
+    flex-direction: column;
+  }
+
+  .error {
+    width: 100%;
+  }
+
+}
+
+.eac-input-marker {
+  @include rem(margin, 0 10px);
+}
+
+// Remove button
+
+.remove {
+  @include rem(margin, 0 15px 0 0);
+  @include rem(height, 25px);
+  @include rem(width, 25px);
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  transform: rotate(45deg);
+
+  svg {
+    circle, stroke {
+      transition: all 250ms ease-in-out;
+    }
+  }
+
+  &:hover {
+    svg {
+      transition: all 250ms ease-in-out;
+
+      circle {
+        fill: #f2a900;
+        stroke: #f2a900;
+      }
+
+      line {
+        stroke: white;
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,45 @@
+// Empty states
+
+.not-allowed-message {
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+.empty-documents {
+  @include rem(padding, 40px);
+  align-items: center;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.empty-icon {
+  height: 113px;
+  width: 100px;
+}
+
+.no-content {
+  @include rem(margin, 16px 0 0);
+}
+
+.performance-coming-soon {
+  padding: 1rem;
+  text-align: center;
+}
+
+.coming-soon-scale {
+  @include rem(max-height, 200px);
+}
+
+.loading-action {
+  @include rem(padding, 40px 0);
+  align-items: center;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

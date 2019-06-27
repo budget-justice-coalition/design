@@ -1,0 +1,8 @@
+## grunt stuff
+
+node_modules
+.npm-debug.log
+tmp
+
+.sass-cache
+*.mp4

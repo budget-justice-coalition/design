@@ -4,7 +4,6 @@ category: Elements
 order: 8
 scss: alerts.scss
 usage: "Application Alerts"
-approved: Design approved by Adriaan Bester - 31/01/2018
 
 ---
 

@@ -31,8 +31,9 @@ input[type="button"] {
   }
 
   &.button-large-cta {
-    @include rem(min-height, 60px);
+    @include rem(min-height, 50px);
     @include font-size(18);
+    @include rem(max-width, 200px);
   }
 
   &.button-outline {

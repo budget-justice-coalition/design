@@ -14,36 +14,36 @@ h3 {
 	color: $heading-color;
 }
 
-h1 {
-	@include font-size(40);
-}
-
 .coming-soon-header {
 	color: $elf-green;
 	margin-top: 0;
 }
 
+h1 {
+  font-size: 1.912em;
+  line-height: calc(18px + 1.8vw); /* Responsive Vertical Rhythm */
+}
+
 h2 {
-	@include font-size(28);
-	line-height: 1.4;
+  font-size: 1.616em;
+  line-height: calc(18px + 1vw); /* Responsive Vertical Rhythm */
 }
 
 h3 {
-	// font-size: 3rem;
-	// margin: 0 0 1rem;
+  font-size: 1.471em;
+  line-height: calc(18px + 0.7vw); /* Responsive Vertical Rhythm */
 }
 
-h4 {
-	// font-size: 2.3rem;
-	margin: 0 0 1rem;
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.243em; }
+h6 { font-size: 1.132em; }
+
+h4, h5, h6 {
+  line-height: calc(18px + .2vw); /* Responsive Vertical Rhythm */
 }
 
-h5 {
-	// font-size: 2rem;
-}
-
-h6 {
-	// font-size: 2rem;
+h1, h2, h3, h4, h5, h6 {
+  margin: calc(12px + 1.05vw) 0; /* Responsive margins */
 }
 
 a {

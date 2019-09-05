@@ -25,18 +25,18 @@ h3 {
 }
 
 h1 {
-  font-size: 1.912em;
-  line-height: calc(18px + 1.8vw); /* Responsive Vertical Rhythm */
+  font-size: 2.712em;
+  line-height: calc(18px + 5.8vw);
 }
 
 h2 {
   font-size: 1.616em;
-  line-height: calc(18px + 1vw); /* Responsive Vertical Rhythm */
+  line-height: calc(18px + 1vw);
 }
 
 h3 {
   font-size: 1.471em;
-  line-height: calc(18px + 0.7vw); /* Responsive Vertical Rhythm */
+  line-height: calc(18px + 0.7vw);
 }
 
 h4 { font-size: 1.3em; }
@@ -44,23 +44,23 @@ h5 { font-size: 1.243em; }
 h6 { font-size: 1.132em; }
 
 h4, h5, h6 {
-  line-height: calc(18px + .2vw); /* Responsive Vertical Rhythm */
+  line-height: calc(18px + .2vw);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: calc(12px + 1.05vw) 0; /* Responsive margins */
+  margin: calc(12px + 1.05vw) 0;
 }
 
 a {
 	color: $link-color;
 
-	// &:hover, &:active {
-	// 	color: $link-hover-color;
-	// }
+	&:hover, &:active {
+		color: $link-hover-color;
+	}
 
-	//  &:focus {
- //    outline: 1px dotted black;
- //  }
+	 &:focus {
+    outline: 1px dotted black;
+  }
 
 }
 
@@ -148,14 +148,6 @@ kbd {
 	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
 }
 
-// Special links
-
-.download-file {
-	@include font-size(13);
-	text-decoration: none;
-	text-align: left;
-}
-
 // Misc
 
 .uppercase {
@@ -166,4 +158,11 @@ blockquote {
 	@include rem(padding, 10px 24px);
 	@include rem(margin, 24px 0);
 	border-left: 0.5rem solid $elf-green;
+}
+
+// Custom headers
+
+.main-tagline {
+	@include font-size(70);
+	line-height: 1.2;
 }

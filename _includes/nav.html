@@ -1,0 +1,23 @@
+<header class="top-header" id="js-header">
+  <div class="header-elements">
+    <a class="logo" href="">
+      Budget Justice Coalition
+    </a>
+    <nav id="nav-primary" class="navigation">
+      <ul>
+        <li class="nav-primary-item">
+          {% assign home = site.html_pages | where: 'url', '/' | first %}
+          <a class="nav-primary-link {% if page.url == '/components/templates/home-page/' %}current{% endif %}" href="{{ site.baseurl }}/components/templates/home-page/">Home</a>
+        </li>
+        {% for link in site.data.nav.primary %}
+          {% assign class = nil %}
+            {% if page.url contains link.url %}
+              {% assign class = 'current' %}
+            {% endif %}
+            <li class="nav-primary-item"><a class="nav-primary-link" href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <a href="" class="button button-small button-join">Get involved</a>
+  </div>
+</header>

@@ -1,0 +1,115 @@
+// Home page
+
+.center-split {
+  --center-split-max-width: 50vw;
+}
+
+.center-split > article {
+  align-items: center;
+  display: grid;
+  justify-items: center;
+
+  &:first-of-type {
+    // order: 2;
+  }
+
+}
+
+.center-split img,
+.center-split picture,
+.center-split video {
+  display: block;
+  padding: 0;
+  object-fit: cover;
+}
+
+@media (min-width: 720px) {
+  .center-split {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: stretch;
+  }
+
+  .center-split > * > * {
+    max-width: var(--center-split-max-width);
+  }
+
+  .center-split > img,
+  .center-split > picture,
+  .center-split > video {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.cta, .split-image {
+  color: white;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  text-align: center;
+}
+
+.cta {
+  max-width: 20rem;
+
+  a {
+    margin: 0 auto;
+    max-width: 13rem;
+  }
+
+}
+
+
+.dark-cta {
+  color: $base-color;
+}
+
+.funding-info {
+  @include rem(padding, 32px 0);
+  background-color: $sea-pink;
+
+  > article {
+    @include rem(max-width, 960px);
+    background-color: white;
+    margin: 0 auto;
+
+    @include breakpoint(720px) {
+      display: flex;
+      align-items: center;
+    }
+
+  }
+
+}
+
+.funding-info-block {
+  flex: 1 0 50%;
+
+  img {
+    display: block;
+  }
+
+  p {
+    @include font-size(32);
+  }
+
+  .button {
+    max-width: 16rem;
+  }
+
+}
+
+.stats {
+  @include rem(padding, 0 64px);
+  line-height: 1.3;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stats-actual {
+  color: $sea-pink;
+  font-weight: 600;
+}

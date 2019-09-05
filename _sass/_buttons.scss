@@ -59,9 +59,11 @@ input[type="button"] {
     width: 100%;
   }
 
-  &.small-button {
+  &.button-small {
     @include rem(padding, 7px 20px);
     @include font-size(14);
+    @include rem(min-height, 30px);
+    @include rem(min-width, 120px);
   }
 
   &.warning-button {

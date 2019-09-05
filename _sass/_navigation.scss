@@ -5,7 +5,7 @@
   display: flex;
 
   @include breakpoint(58.125em) {
-    margin-left: 3rem;
+    margin-left: auto;
   }
 
   ul {
@@ -37,7 +37,7 @@
     background-color: $elf-green;
     content: "";
     display: block;
-    height: 1px;
+    height: 2px;
     transform: scale(0);
     transition: transform 250ms ease-in-out;
   }

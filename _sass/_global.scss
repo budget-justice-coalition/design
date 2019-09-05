@@ -67,15 +67,17 @@ img {
 
 
 .logo {
-  font-style: italic;
-  font-weight: 600;
+  align-items: center;
+  display: flex;
   text-decoration: none;
 
-  img {
+  svg {
     vertical-align: middle;
-    width: 180px;
-
   }
+}
+
+.logo-word-mark {
+  margin-left: 0.5rem;
 }
 
 // Layout items

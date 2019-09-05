@@ -1,11 +1,9 @@
 # Primary home navigation links
 
 primary:
-  - title: "About"
-    url: /components/templates/about-page/
-  - title: "News"
-    url: /news/
-  - title: "Resources"
+  - title: "Latest news."
+    url: /components/templates/news/
+  - title: "Resources."
     url: /resources/
-  - title: "Contact"
-    url: /contact-us/
+  - title: "Founding members."
+    url: /founding-members/

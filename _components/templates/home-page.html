@@ -6,32 +6,4 @@ category: Templates
 
 <section class="container">
   <h1 class="main-tagline">Collaboratively building understanding of South Africa's budget</h1>
-
-<!--   <ul>
-   <li class="panel active">Item 1</li>
-   <li class="panel">Item 2</li>
-   <li class="panel">Item 3</li>
- </ul> -->
-
 </section>
-
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function(){
-   let lis = Array.prototype.slice.call( document.querySelectorAll('li.panel'));
-   let lis_count = lis.length;
-   let active_li_index = 0;
-
-   setInterval(function(){
-      let active_li = document.querySelector('li.panel.active');
-
-      if( lis.indexOf(active_li) == lis_count-1 )
-        active_li_index  = 0;
-      else
-        active_li_index++;
-
-      active_li.classList.remove('active');
-      document.querySelectorAll('li.panel')[active_li_index].classList.add('active');
-   }, 1000);
-  }, false);
-
-</script>

@@ -8,6 +8,46 @@
 	color: white;
 }
 
+
+
+// --------------------------- Font-Scaling Algorithm ----------------------------
+// For the general strategy: https://www.codementor.io/ricardozea/100-responsive-typography-system-using-a-modular-scale-s5rhft58g
+// Explanation contained herein: https://www.madebymike.com.au/writing/precise-control-responsive-typography/
+
+// -------------
+// Min and max viewport sizes to apply the font scaling
+$min_width: 320;
+$max_width: 1400;
+// --------------
+
+// --------------
+// Range of font size to apply
+$min_font: 13;
+$max_font: 18;
+// --------------
+
+html {
+  font-size: #{$min_font}px;
+}
+
+// Media queries
+// -------------
+
+@media (min-width: #{$min_width}px) and (max-width: #{$max_width}px) {
+  html {
+    font-size: calc(
+      #{$min_font}px + (#{$max_font} - #{$min_font}) *
+        ((100vw - #{$min_width}px) / (#{$max_width} - #{$min_width}))
+    );
+  }
+}
+
+@media (min-width: #{$max_width}px) {
+  html {
+    font-size: #{$max_font}px;
+  }
+}
+
 h1,
 h2,
 h3 {
@@ -162,7 +202,30 @@ blockquote {
 
 // Custom headers
 
-.main-tagline {
-	@include font-size(70);
-	line-height: 1.2;
+.taglines {
+	align-items: center;
+	background-image: url(/assets/svg/line-chart-bg.svg);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem 0 0;
+	text-align: center;
 }
+
+
+.main-tagline {
+	@include font-size(60);
+	line-height: 1.2;
+	padding: 0 2.5rem;
+	max-width: 1100px;
+}
+
+.secondary-tagline {
+	@include font-size(30);
+	color: $elf-green;
+	line-height: 1.2;
+	padding: 0 4rem;
+	max-width: 1060px;
+}
+

@@ -32,6 +32,7 @@
   .center-split > img,
   .center-split > picture,
   .center-split > video {
+    object-fit: fill;
     max-width: 100%;
     margin: 0;
   }

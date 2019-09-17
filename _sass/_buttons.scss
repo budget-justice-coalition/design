@@ -102,39 +102,38 @@ input[type="button"] {
     outline: 1px dotted black;
   }
 
-  &[disabled] {
-    background-color: #e6e6e6;
-    color: #cccccc;
-    cursor: not-allowed;
-  }
-
-  &.slider-button {
-    background-color: #006341;
-    border: 0;
-  }
-
-  &.loading-button {
-    padding-right: 2.5rem;
-    position: relative;
-    transition: none;
-
-    svg {
-      @include rem(right, 10px);
-      position: absolute;
-      height: 1.2rem;
-      top: 35%;
-      width: 1.2rem;
-    }
-
-  }
-
-  svg {
-    vertical-align: middle;
-  }
-
   &.reset {
     background-color: $very-light-grey;
     color: $base-color;
+  }
+
+}
+
+button[disabled] {
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
+  color: #cccccc;
+  cursor: not-allowed;
+
+  &:hover {
+    box-shadow: none;
+  }
+
+}
+
+.toolbar-button {
+  @include font-size(12);
+  background-color: transparent;
+  border: 1px solid $button-color;
+  border-radius: 25px;
+  color: $button-color;
+  height: 45px;
+  padding: 0 1rem;
+  position: relative;
+  transition: box-shadow 250ms ease-in;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $button-color;
   }
 
 }

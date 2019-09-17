@@ -16,6 +16,8 @@
   display: block;
   padding: 0;
   object-fit: cover;
+  filter: saturate(2);
+  -webkit-filter: saturate(2);
 }
 
 @media (min-width: 720px) {
@@ -32,7 +34,6 @@
   .center-split > img,
   .center-split > picture,
   .center-split > video {
-    object-fit: fill;
     max-width: 100%;
     margin: 0;
   }

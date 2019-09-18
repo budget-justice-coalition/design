@@ -1355,6 +1355,7 @@ pre {
 
     .nav-item a {
       color: #4d4d4d !important;
+      line-height: 1.5;
     }
 
     nav > ul + ul {

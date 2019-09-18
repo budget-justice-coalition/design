@@ -2,6 +2,7 @@
 
 .two-column-grid {
   display: grid;
+  @include rem(grid-gap, 64px);
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }

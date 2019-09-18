@@ -81,6 +81,10 @@ img {
 
 // Layout items
 
+.component-wrapper {
+  @include rem(padding, 0 16px);
+}
+
 .container {
   max-width: 1100px;
   margin: auto;

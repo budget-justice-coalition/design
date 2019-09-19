@@ -32,13 +32,12 @@
 }
 
 .grid-content {
+  @include rem(padding, 32px 0);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
 
-  a {
-    margin-top: auto;
-  }
-
-
+.grid-item-header {
+  margin-top: 0.5rem;
 }

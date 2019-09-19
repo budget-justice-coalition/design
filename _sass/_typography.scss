@@ -87,10 +87,6 @@ h4, h5, h6 {
   line-height: calc(18px + .2vw);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: calc(12px + 1.05vw) 0;
-}
-
 a {
 	color: $link-color;
 
@@ -201,5 +197,24 @@ blockquote {
 }
 
 // Custom headers
+	
+.section-header {
+	font-size: 3em;
+	margin: 0 auto 4rem;
+	max-width: 1100px;
 
+	&::after {
+		background-color: $sea-pink;
+		content: "";
+		display: block;
+		height: 8px;
+		transform: translateY(0.875rem);
+		width: 6rem;
+	} 
+
+}
+
+.center-header {
+	text-align: center;
+}
 

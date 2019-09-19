@@ -15,6 +15,7 @@ input[type="button"] {
   @include rem(min-width, 200px);
   align-items: center;
   background-color: $button-color;
+  background: linear-gradient(to bottom, $button-color 1%, darken($button-color, 5%) 100%);
   border: 0;
   border-radius: 25px;
   color: white;
@@ -49,7 +50,7 @@ input[type="button"] {
   }
 
   &:hover, &:focus {
-    background: $button-hover-color;
+    background: linear-gradient(to bottom, darken($button-color, 8%) 1%, darken($button-color, 5%) 100%);
     color: white;
     text-decoration: none;
   }

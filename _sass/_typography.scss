@@ -132,21 +132,18 @@ ol ul {
 	padding-left: 1em;
 }
 
-dl dt {
-	float: left;
-	width: 180px;
-	overflow: hidden;
-	clear: left;
-	text-align: right;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	font-weight: 700;
-	margin-bottom: 1em;
+dl {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-dl dd {
-	margin-left: 200px;
-	margin-bottom: 1em;
+dt {
+  width: 33%;
+}
+
+dd {
+  margin-left: auto;
+  width: 66%;
 }
 
 hr {
@@ -227,7 +224,7 @@ blockquote {
 		content: "";
 		display: block;
 		height: 8px;
-		transform: translateY(0.875rem);
+		transform: translateY(1rem);
 		width: 6rem;
 	} 
 

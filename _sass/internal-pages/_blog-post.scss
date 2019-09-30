@@ -1,5 +1,24 @@
 // Blog posts
 
+// Landing page
+
+.news-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: 50%;
+  background-size: cover;
+  height: 40vh;
+  min-height: 600px;
+  margin-bottom: 6rem;
+  position: relative;
+  width: 100%;
+}
+
+.news-feature-container {
+  color: white;
+  width: 100%;
+}
 
 .article-container {
   @include rem(max-width, 600px);

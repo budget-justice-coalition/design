@@ -1,27 +1,15 @@
 // // js Stuffs
 
-// const toggleClass =  (el, cls) => {
-//   if (Array.isArray(cls)) {
-//       cls.map((cl) => {
-//           el.classList.toggle(cl);
-//       });
-//   } else {
-//       el.classList.toggle(cls);
-//   }
-// };
+let glossaryClick = Array.from(document.querySelectorAll('.glossary-link'));
 
-// toggleClass(document.getElementsByClassName('glossary-link'), 'active');
-
-
-var glossaryLink = document.querySelectorAll(".glossary-link");
-
-for (var i = 0; i < glossaryLink.length; ++i) {
-  glossaryLink[i].addEventListener('click', toggleClasses);
+const handleClick = (e) => {
+  glossaryClick.forEach(node => {
+    node.classList.remove('active');
+  });
+  e.currentTarget.classList.add('active');
+  
 }
 
-function toggleClasses() {
-  var i = 0;
-  for (i = 0; i < glossaryLink.length; ++i) {
-    glossaryLink[i].classList.toggle('active');
-  }
-}
+glossaryClick.forEach(node => {
+  node.addEventListener('click', handleClick)
+});

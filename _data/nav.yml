@@ -2,8 +2,8 @@
 
 primary:
   - title: "Latest news."
-    url: /components/templates/news/
+    url: /components/templates/news-landing-page/
   - title: "Resources."
-    url: /resources/
-  - title: "Founding members."
-    url: /founding-members/
+    url: /components/templates/resources-page/
+  - title: "About us."
+    url: /components/templates/about-page/

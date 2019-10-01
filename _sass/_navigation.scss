@@ -25,7 +25,6 @@
 }
 
 .nav-primary-link {
-  @include font-size(14);
   @include rem('padding', 0 0 4px);
   font-family: inherit;
   font-weight: 500;

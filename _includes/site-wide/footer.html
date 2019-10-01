@@ -41,15 +41,15 @@
     <div>
       <h4>Quick links</h4>
       <ul>
-        <li>
-          <a href="">Latest news</a>
-        </li>
-        <li>
-          <a href="">Resources</a>
-        </li>
-        <li>
-          <a href="">Founding members</a>
-        </li>
+        {% for link in site.data.nav.primary %}
+          {% assign class = nil %}
+          {% if page.url contains link.url %}
+            {% assign class = 'current' %}
+          {% endif %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </footer>

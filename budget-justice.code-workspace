@@ -3,8 +3,5 @@
 		{
 			"path": "."
 		}
-	],
-	"settings": {
-		"netlify.site_id": "f4481d56-e0c0-4671-bef0-42ca54339a72"
-	}
+	]
 }

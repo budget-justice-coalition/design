@@ -102,7 +102,7 @@ $gray-light: #ECEFF1;
     }
     
     &:after {
-      right: $spacing/2 + $plus-size;
+      right: 27px;
       top: 50%;
       height: $plus-size;
       margin-top: -$plus-size/2;
@@ -167,4 +167,11 @@ $gray-light: #ECEFF1;
   }
 
 
+}
+
+.header-cta {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
 }

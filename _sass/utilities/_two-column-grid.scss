@@ -38,6 +38,12 @@
   justify-content: space-between;
 }
 
+.resource-item {
+  @include rem(padding, 32px);
+  border: 1px solid $border-color;
+  box-shadow: 0 2px 50px rgba(0,0,0,0.19);
+}
+
 .grid-item-header {
   margin-top: 0.5rem;
 }

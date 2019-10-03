@@ -60,3 +60,42 @@
 .button-join {
   margin-left: auto;
 }
+
+// Internal nav
+
+.internal-nav {
+  
+  ul {
+    display: flex;
+    list-style-type: none;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 2rem;
+  
+  }
+  
+  li {
+    margin-right: 4rem;
+
+    &:first-child {
+      font-weight: 600;
+    }
+
+  }
+
+  a {
+    color: $sea-pink;
+    text-decoration: none;
+
+    &.active {
+      color: darken($sea-pink, 10%);
+      font-weight: 600;
+    }
+
+    &:hover {
+      color: darken($sea-pink, 10%);
+      text-decoration: underline;
+    }
+
+  }
+
+}

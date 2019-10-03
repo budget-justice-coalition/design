@@ -24,43 +24,23 @@
 
 }
 
-// Body section
+// About
 
-.about-info {
-  @include rem(max-width, 800px);
-  padding: 4rem 1rem;
-  margin: 0 auto;
+.mission-vision {
+  border-bottom: 1px solid $border-color;
+  border-top: 1px solid $border-color;
 
-  .about-text {
-    &:nth-of-type(2) {
-      order: 4;
-    }
-  }
-
-  &.donate-page {
-    @include rem(max-width, 960px);
-
-    .button {
-      max-width: 16rem;
-    }
-
-  }
-
-
-}
-
-.about-image {
-  align-self: center;
-  display: flex;
-  justify-items: center;
-  object-fit: contain;
-
-
-  img {
-    vertical-align: middle;
+  li {
+    margin-bottom: 0.5rem;
   }
 }
 
+
+.mission-vision-copy {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70ch;
+}
 
 // Blog posts
 

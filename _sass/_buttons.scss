@@ -64,6 +64,7 @@ input[type="button"] {
     @include rem(padding, 7px 20px);
     @include font-size(14);
     @include rem(min-height, 30px);
+    @include rem(height, 36px);
     @include rem(min-width, 120px);
   }
 

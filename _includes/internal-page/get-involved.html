@@ -40,10 +40,13 @@
     </article>
     <h3>Join</h3>
     <p>To join the Budget Justice Coalition please complete the below membership form.</p>
-    <form action="" method="post" data-netlify="true">
+    <form action="" method="post" data-netlify="true" netlify-honeypot="bot-field">
+      <p class="is-hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
       <p>
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" class="text-input">
+        <input type="text" name="name" id="name" class="text-input" required>
       </p>
       <p>
         <label for="surname">Surname</label>
@@ -68,11 +71,11 @@
       <div class="input-wrapper">
         <label for="">Membership type</label>
         <p>
-          <input id="individual-membership" class="radio-custom" name="membership-type" type="radio">
+          <input id="individual-membership" class="radio-custom" name="membership-type" type="radio" value="Individual">
           <label for="individual-membership" class="radio-custom-label">Individual</label>
         </p>
         <p>
-          <input id="organisation-membership" class="radio-custom" name="membership-type" type="radio">
+          <input id="organisation-membership" class="radio-custom" name="membership-type" type="radio" value="Organisation">
           <label for="organisation-membership" class="radio-custom-label">Organisation</label>
         </p>
       </div>
